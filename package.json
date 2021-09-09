@@ -1,7 +1,7 @@
 {
-    "name": "robot44trade",
+    "name": "growct",
     "version": "1.0.0",
-    "description": "robot44trade Empire",
+    "description": "growct",
     "main": "app.js",
     "engines": {
         "node": "10.21.0"
