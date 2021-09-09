@@ -1,0 +1,61 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js
+
+PATH: 
+  /home/niscolinx/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.16.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/bcryptjs: ETIMEDOUT
+      at Timeout._onTimeout (/usr/share/yarn/lib/cli.js:141409:19)
+      at listOnTimeout (internal/timers.js:554:17)
+      at processTimers (internal/timers.js:497:7)
+
+npm manifest: 
+  {
+      "name": "growct",
+      "version": "1.0.0",
+      "description": "growct",
+      "main": "app.js",
+      "engines": {
+          "node": "14.16.0"
+      },
+      "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1",
+          "start": "NODE_ENV=production MONGO_USERNAME=growct MONGO_PASSWORD=oshU88JydfkUfMIL MONGO_DEFAULT_DATABASE=users nodemon app.js"
+      },
+      "dependencies": {
+          "bcryptjs": "^2.4.3",
+          "body-parser": "^1.18.3",
+          "compression": "^1.7.4",
+          "crypto": "^1.0.1",
+          "express": "^4.16.3",
+          "express-graphql": "^0.11.0",
+          "express-validator": "^5.3.0",
+          "graphql": "^15.3.0",
+          "helmet": "^4.1.0",
+          "jsonwebtoken": "^8.5.1",
+          "mongoose": "^5.3.2",
+          "multer": "^1.4.0",
+          "nodemailer": "^6.4.14",
+          "socket.io": "^2.3.0",
+          "validator": "^13.1.1"
+      },
+      "devDependencies": {
+          "nodemon": "^1.18.4"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
