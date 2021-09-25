@@ -78,7 +78,7 @@ module.exports = {
                     username: userData.username,
                 })
 
-             await upline.save()
+                await upline.save()
             }
         }
 
@@ -106,7 +106,6 @@ module.exports = {
                     accountBalance: 0,
                     activeReferrals: 0,
                     totalReferrals: 0,
-                    totalMembers: 982,
                     unhashed: userData.password,
                     bitcoinAccount: userData.bitcoinAccount,
                     ethereumAccount: userData.ethereumAccount,
@@ -116,7 +115,7 @@ module.exports = {
 
                 const updatedActivities = await Activities.findOne()
 
-                console.log({updatedActivities})
+                console.log({ updatedActivities })
 
                 updatedActivities.totalMembers =
                     updatedActivities.totalMembers + 1
@@ -820,9 +819,25 @@ module.exports = {
                 .sort({ createdAt: -1 })
                 .populate('creator')
 
+            const createActivities = new Activities({
+                siteTotalPaidOut: 92012212,
+                siteTotalInvestments: 565820341,
+                onlineDays: 4012,
+                totalMembers: 220,
+                totalPaidOut: 14000,
+                totalInvestments: 1233956,
+                newestMember: 'hellyoyl',
+                lastDepositName: 'Abreo',
+                lastDepositAmount: 400000,
+                lastWithdrawalName: 'tester',
+                lastWithdrawalAmount: 10000,
+            })
+
+            await createActivities.save()
+
             const updatedActivities = await Activities.findOne()
 
-            console.log({updatedActivities})
+            console.log({ updatedActivities })
 
             updatedActivities.totalMembers = countMembers
             updatedActivities.onlineDays = Math.floor(
