@@ -60,7 +60,7 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-    res.send("Welcome to Main Robot44trade")
+    res.send('Welcome to Main Growveon cryptotrading')
 })
 
 app.use(auth)

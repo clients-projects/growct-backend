@@ -78,7 +78,7 @@ module.exports = {
                     username: userData.username,
                 })
 
-                const updatedUpline = await upline.save()
+             await upline.save()
             }
         }
 
@@ -99,7 +99,7 @@ module.exports = {
                     email: userData.email,
                     city: userData.city,
                     upline: userData.referral,
-                    referralLink: `https://robot44trade.com/Auth/signup?ref=${userData.username}`,
+                    referralLink: `https://growveonct.com/Auth/signup?ref=${userData.username}`,
                     country: userData.country,
                     password: hashedPassword,
                     fullname: userData.fullname,
@@ -232,7 +232,6 @@ module.exports = {
                 creator: req.userId,
             })
 
-
             let totalUserDeposits = 0
             let totalUserWithdrawals = 0
 
@@ -259,18 +258,18 @@ module.exports = {
                 throw error
             }
 
-            
             const userFundAccount = []
             const userPendingDeposit = []
             let userPendingWithdrawalAmount = 0
             let lastDepositAmount = 0
 
-            if(userDeposits.length > 0){
-
-                lastDepositAmount = Math.floor(userDeposits[userDeposits.length - 1].amount)
+            if (userDeposits.length > 0) {
+                lastDepositAmount = Math.floor(
+                    userDeposits[userDeposits.length - 1].amount
+                )
             }
             let theUser = {}
-            
+
             userPendingDeposits._doc.pendingDeposits.map((p, i) => {
                 userPendingDeposit.push({
                     _id: p._id.toString(),
@@ -295,7 +294,7 @@ module.exports = {
             theUser = {
                 ...user._doc,
                 _id: user._id.toString(),
-                accountBalance: Math.floor(user.accountBalance)
+                accountBalance: Math.floor(user.accountBalance),
             }
 
             return {
@@ -370,9 +369,8 @@ module.exports = {
             theUser = {
                 ...user._doc,
                 _id: user._id.toString(),
-                accountBalance: Math.floor(user.accountBalance)
+                accountBalance: Math.floor(user.accountBalance),
             }
-
 
             return {
                 user: theUser,
@@ -527,9 +525,8 @@ module.exports = {
 
             user.pendingWithdrawals.push(savePendingWithdrawNow)
 
-            
             await user.save()
-            
+
             return {
                 ...savePendingWithdrawNow._doc,
                 _id: savePendingWithdrawNow._id.toString(),
@@ -579,7 +576,7 @@ module.exports = {
 
             user.pendingDeposits.push(saveInvestNow)
 
-             await user.save()
+            await user.save()
 
             return {
                 ...saveInvestNow._doc,
@@ -823,16 +820,30 @@ module.exports = {
             const updatedActivities = await Activities.findOne()
 
             updatedActivities.totalMembers = countMembers
-            updatedActivities.onlineDays = Math.floor(updatedActivities.onlineDays)
-            updatedActivities.totalPaidOut = Math.floor(updatedActivities.totalPaidOut)
-            updatedActivities.totalInvestments =
-                Math.floor(updatedActivities.totalInvestments)
-            updatedActivities.newestMember = newestMember ? newestMember.username : ''
-            updatedActivities.lastDepositName = lastDeposit ? lastDeposit.creator.username : ''
-            updatedActivities.lastDepositAmount = lastDeposit ? Math.floor(lastDeposit.amount) : 0
-            updatedActivities.lastWithdrawalName =
-                lastWithdrawal ? lastWithdrawal.creator.username : ''
-            updatedActivities.lastWithdrawalAmount = lastWithdrawal ? Math.floor(lastWithdrawal.amount) : 0
+            updatedActivities.onlineDays = Math.floor(
+                updatedActivities.onlineDays
+            )
+            updatedActivities.totalPaidOut = Math.floor(
+                updatedActivities.totalPaidOut
+            )
+            updatedActivities.totalInvestments = Math.floor(
+                updatedActivities.totalInvestments
+            )
+            updatedActivities.newestMember = newestMember
+                ? newestMember.username
+                : ''
+            updatedActivities.lastDepositName = lastDeposit
+                ? lastDeposit.creator.username
+                : ''
+            updatedActivities.lastDepositAmount = lastDeposit
+                ? Math.floor(lastDeposit.amount)
+                : 0
+            updatedActivities.lastWithdrawalName = lastWithdrawal
+                ? lastWithdrawal.creator.username
+                : ''
+            updatedActivities.lastWithdrawalAmount = lastWithdrawal
+                ? Math.floor(lastWithdrawal.amount)
+                : 0
 
             const theUpdate = await updatedActivities.save()
 
@@ -970,8 +981,9 @@ module.exports = {
 
             let oldAccountBalance = user.accountBalance
 
-            user.accountBalance =
-               Math.floor(oldAccountBalance - updatedpendingWithdrawal.amount)
+            user.accountBalance = Math.floor(
+                oldAccountBalance - updatedpendingWithdrawal.amount
+            )
 
             await user.save()
 
@@ -985,8 +997,9 @@ module.exports = {
                 const newWithdrawal = await WithdrawalNow.save()
 
                 const updatedActivities = await Activities.findOne()
-                updatedActivities.totalPaidOut =
-                    Math.floor(updatedActivities.totalPaidOut + pendingWithdrawal.amount)
+                updatedActivities.totalPaidOut = Math.floor(
+                    updatedActivities.totalPaidOut + pendingWithdrawal.amount
+                )
                 await updatedActivities.save()
 
                 return {
@@ -1047,8 +1060,9 @@ module.exports = {
 
             let oldAccountBalance = user.accountBalance
 
-            user.accountBalance =
-               Math.floor(oldAccountBalance + updatedpendingDeposit.amount)
+            user.accountBalance = Math.floor(
+                oldAccountBalance + updatedpendingDeposit.amount
+            )
 
             await user.save()
 
@@ -1064,8 +1078,9 @@ module.exports = {
 
                 const updatedActivities = await Activities.findOne()
 
-                updatedActivities.totalInvestments =
-                    Math.floor(updatedActivities.totalInvestments + pendingDeposit.amount)
+                updatedActivities.totalInvestments = Math.floor(
+                    updatedActivities.totalInvestments + pendingDeposit.amount
+                )
 
                 await updatedActivities.save()
 
@@ -1125,7 +1140,9 @@ module.exports = {
 
             let oldAccountBalance = user.accountBalance
 
-            user.accountBalance = Math.floor(oldAccountBalance + updatedFundAccount.amount)
+            user.accountBalance = Math.floor(
+                oldAccountBalance + updatedFundAccount.amount
+            )
 
             await user.save()
 
@@ -1180,7 +1197,6 @@ module.exports = {
 
             const updatedUser = await existingUser.save()
 
-
             if (updatedUser) {
                 return {
                     ...updatedUser._doc,
@@ -1220,13 +1236,19 @@ module.exports = {
             existingUser.email = updateMemberData.email
             existingUser.fullname = updateMemberData.fullname
             existingUser.city = updateMemberData.city
-            existingUser.dailyEarning = Math.floor(updateMemberData.dailyEarning)
-            existingUser.totalEarnings = Math.floor(updateMemberData.totalEarnings)
+            existingUser.dailyEarning = Math.floor(
+                updateMemberData.dailyEarning
+            )
+            existingUser.totalEarnings = Math.floor(
+                updateMemberData.totalEarnings
+            )
             existingUser.activeReferrals = updateMemberData.activeReferrals
             existingUser.totalReferrals = updateMemberData.totalReferrals
             existingUser.totalReferralCommission =
                 updateMemberData.totalReferralCommission
-            existingUser.accountBalance = Math.floor(updateMemberData.accountBalance)
+            existingUser.accountBalance = Math.floor(
+                updateMemberData.accountBalance
+            )
             existingUser.country = updateMemberData.country
             existingUser.phone = updateMemberData.phone
             existingUser.bitcoinAccount = updateMemberData.bitcoinAccount

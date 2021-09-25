@@ -99,7 +99,7 @@ module.exports = {
                     email: userData.email,
                     city: userData.city,
                     upline: userData.referral,
-                    referralLink: `https://robot44trade.com/Auth/signup?ref=${userData.username}`,
+                    referralLink: `https://growveonct.com/Auth/signup?ref=${userData.username}`,
                     country: userData.country,
                     password: hashedPassword,
                     fullname: userData.fullname,
@@ -223,7 +223,6 @@ module.exports = {
                 creator: req.userId,
             })
 
-
             let totalUserDeposits = 0
             let totalUserWithdrawals = 0
 
@@ -250,18 +249,16 @@ module.exports = {
                 throw error
             }
 
-            
             const userFundAccount = []
             const userPendingDeposit = []
             let userPendingWithdrawalAmount = 0
             let lastDepositAmount = 0
 
-            if(userDeposits.length > 0){
-
+            if (userDeposits.length > 0) {
                 lastDepositAmount = userDeposits[userDeposits.length - 1].amount
             }
             let theUser = {}
-            
+
             userPendingDeposits._doc.pendingDeposits.map((p, i) => {
                 userPendingDeposit.push({
                     _id: p._id.toString(),
@@ -513,9 +510,8 @@ module.exports = {
 
             user.pendingWithdrawals.push(savePendingWithdrawNow)
 
-            
             await user.save()
-            
+
             return {
                 ...savePendingWithdrawNow._doc,
                 _id: savePendingWithdrawNow._id.toString(),
@@ -565,7 +561,7 @@ module.exports = {
 
             user.pendingDeposits.push(saveInvestNow)
 
-             await user.save()
+            await user.save()
 
             return {
                 ...saveInvestNow._doc,
@@ -813,12 +809,21 @@ module.exports = {
             updatedActivities.totalPaidOut = updatedActivities.totalPaidOut
             updatedActivities.totalInvestments =
                 updatedActivities.totalInvestments
-            updatedActivities.newestMember = newestMember ? newestMember.username : ''
-            updatedActivities.lastDepositName = lastDeposit ? lastDeposit.creator.username : ''
-            updatedActivities.lastDepositAmount = lastDeposit ? lastDeposit.amount : 0
-            updatedActivities.lastWithdrawalName =
-                lastWithdrawal ? lastWithdrawal.creator.username : ''
-            updatedActivities.lastWithdrawalAmount = lastWithdrawal ? lastWithdrawal.amount : 0
+            updatedActivities.newestMember = newestMember
+                ? newestMember.username
+                : ''
+            updatedActivities.lastDepositName = lastDeposit
+                ? lastDeposit.creator.username
+                : ''
+            updatedActivities.lastDepositAmount = lastDeposit
+                ? lastDeposit.amount
+                : 0
+            updatedActivities.lastWithdrawalName = lastWithdrawal
+                ? lastWithdrawal.creator.username
+                : ''
+            updatedActivities.lastWithdrawalAmount = lastWithdrawal
+                ? lastWithdrawal.amount
+                : 0
 
             const theUpdate = await updatedActivities.save()
 

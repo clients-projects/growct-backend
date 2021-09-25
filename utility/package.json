@@ -1,33 +1,33 @@
 {
-  "name": "robot44trade",
-  "version": "1.0.0",
-  "description": "robot44trade Empire",
-  "main": "app.js",
-  "engines": {
-    "node": "10.21.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production MONGO_USERNAME=robot44 MONGO_PASSWORD=rFomTe3Sx6ZqJh7K MONGO_DEFAULT_DATABASE=users nodemon app.js"
-  },
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
-    "compression": "^1.7.4",
-    "crypto": "^1.0.1",
-    "express": "^4.16.3",
-    "express-graphql": "^0.11.0",
-    "express-validator": "^5.3.0",
-    "graphql": "^15.3.0",
-    "helmet": "^4.1.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.3.2",
-    "multer": "^1.4.0",
-    "nodemailer": "^6.4.14",
-    "socket.io": "^2.3.0",
-    "validator": "^13.1.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
-  }
+    "name": "growveonct",
+    "version": "1.0.0",
+    "description": "Growveon cryptotrading Empire",
+    "main": "app.js",
+    "engines": {
+        "node": "10.21.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "NODE_ENV=production MONGO_USERNAME=robot44 MONGO_PASSWORD=rFomTe3Sx6ZqJh7K MONGO_DEFAULT_DATABASE=users nodemon app.js"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.18.3",
+        "compression": "^1.7.4",
+        "crypto": "^1.0.1",
+        "express": "^4.16.3",
+        "express-graphql": "^0.11.0",
+        "express-validator": "^5.3.0",
+        "graphql": "^15.3.0",
+        "helmet": "^4.1.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.3.2",
+        "multer": "^1.4.0",
+        "nodemailer": "^6.4.14",
+        "socket.io": "^2.3.0",
+        "validator": "^13.1.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.4"
+    }
 }
