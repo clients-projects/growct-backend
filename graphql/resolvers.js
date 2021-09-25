@@ -115,6 +115,8 @@ module.exports = {
 
                 const updatedActivities = await Activities.findOne()
 
+                console.log({updatedActivities})
+
                 updatedActivities.totalMembers =
                     updatedActivities.totalMembers + 1
 
