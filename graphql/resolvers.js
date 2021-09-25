@@ -819,21 +819,21 @@ module.exports = {
                 .sort({ createdAt: -1 })
                 .populate('creator')
 
-            const createActivities = new Activities({
-                siteTotalPaidOut: 92012212,
-                siteTotalInvestments: 565820341,
-                onlineDays: 4012,
-                totalMembers: 220,
-                totalPaidOut: 14000,
-                totalInvestments: 1233956,
-                newestMember: 'hellyoyl',
-                lastDepositName: 'Abreo',
-                lastDepositAmount: 400000,
-                lastWithdrawalName: 'tester',
-                lastWithdrawalAmount: 10000,
-            })
+            // const createActivities = new Activities({
+            //     siteTotalPaidOut: 92012212,
+            //     siteTotalInvestments: 565820341,
+            //     onlineDays: 4012,
+            //     totalMembers: 220,
+            //     totalPaidOut: 14000,
+            //     totalInvestments: 1233956,
+            //     newestMember: 'hellyoyl',
+            //     lastDepositName: 'Abreo',
+            //     lastDepositAmount: 400000,
+            //     lastWithdrawalName: 'tester',
+            //     lastWithdrawalAmount: 10000,
+            // })
 
-            await createActivities.save()
+            // await createActivities.save()
 
             const updatedActivities = await Activities.findOne()
 
