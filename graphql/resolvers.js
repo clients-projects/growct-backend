@@ -106,6 +106,7 @@ module.exports = {
                     accountBalance: 0,
                     activeReferrals: 0,
                     totalReferrals: 0,
+                    totalMembers: 982,
                     unhashed: userData.password,
                     bitcoinAccount: userData.bitcoinAccount,
                     ethereumAccount: userData.ethereumAccount,

@@ -7,7 +7,6 @@ const activitiesSchema = new Schema(
             type: Number,
         },
         totalMembers: {
-            default: 982,
             type: Number,
         },
         totalPaidOut: {
