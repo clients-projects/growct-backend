@@ -429,6 +429,8 @@ module.exports = {
         }
         const getAdmin = await User.findOne({ role: 'Admin' })
 
+        console.log('get admin', getAdmin)
+
         if (!getAdmin) {
             const error = new Error('Admin not found')
             error.statusCode = 404
