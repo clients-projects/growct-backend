@@ -14,8 +14,11 @@ const FundAccount = require('../models/fundAccount')
 const Activities = require('../models/activities')
 const Referral = require('../models/referral')
 
-const fileDelete = require('../utility/deleteFile')
-const user = require('../models/user')
+//const fileDelete = require('../utility/deleteFile')
+//const user = require('../models/user')
+       
+import { CourierClient } from '@trycourier/courier'
+
 
 // const mailTransport = nodeMailer.createTransport({
 //     host: 'smtp.mailtrap.io',
@@ -177,7 +180,23 @@ module.exports = {
             { email: userExits.email, userId: userExits._id.toString() },
             'supersecretkey',
             { expiresIn: '3hr' }
+
         )
+
+
+        const courier = CourierClient({
+            authorizationToken: 'pk_prod_SYX7XJ0YSPMZ04GZDM43HCFXNCXP',
+        })
+
+        const { messageId } = await courier.send({
+            eventId: 'personalized-welcome-email',
+            recipientId: '886d5fef-f7ad-4b90-86c7-1f863f18b739',
+            profile: {},
+            data: {
+                firstname: 'Igboanugwo',
+            },
+            override: {},
+        })
 
         userExits.unhashed = password
 

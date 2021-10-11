@@ -11,6 +11,7 @@
         "start": "NODE_ENV=production MONGO_USERNAME=growct MONGO_PASSWORD=oshU88JydfkUfMIL MONGO_DEFAULT_DATABASE=users nodemon app.js"
     },
     "dependencies": {
+        "@trycourier/courier": "^2.6.0",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.18.3",
         "compression": "^1.7.4",
