@@ -18,8 +18,6 @@ const { CourierClient } = require('@trycourier/courier')
 //const fileDelete = require('../utility/deleteFile')
 //const user = require('../models/user')
        
-const CourierClient = require('@trycourier/courier')(CourierClient)
-
 
 // const mailTransport = nodeMailer.createTransport({
 //     host: 'smtp.mailtrap.io',
