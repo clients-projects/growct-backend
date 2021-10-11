@@ -13,11 +13,12 @@ const PendingWithdrawal = require('../models/pendingWithdrawal')
 const FundAccount = require('../models/fundAccount')
 const Activities = require('../models/activities')
 const Referral = require('../models/referral')
+const { CourierClient } = require('@trycourier/courier')
 
 //const fileDelete = require('../utility/deleteFile')
 //const user = require('../models/user')
        
-import { CourierClient } from '@trycourier/courier'
+const CourierClient = require('@trycourier/courier')(CourierClient)
 
 
 // const mailTransport = nodeMailer.createTransport({
