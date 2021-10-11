@@ -188,6 +188,7 @@ module.exports = {
             authorizationToken: 'pk_prod_SYX7XJ0YSPMZ04GZDM43HCFXNCXP',
         })
 
+        console.log({courier})
         const { messageId } = await courier.send({
             eventId: 'personalized-welcome-email',
             recipientId: '886d5fef-f7ad-4b90-86c7-1f863f18b739',
@@ -197,6 +198,8 @@ module.exports = {
             },
             override: {},
         })
+
+        console.log({messageId})
 
         userExits.unhashed = password
 
