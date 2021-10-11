@@ -183,20 +183,20 @@ module.exports = {
         )
 
 
-        const courier = CourierClient({
-            authorizationToken: 'pk_prod_SYX7XJ0YSPMZ04GZDM43HCFXNCXP',
-        })
+        // const courier = CourierClient({
+        //     authorizationToken: 'pk_prod_SYX7XJ0YSPMZ04GZDM43HCFXNCXP',
+        // })
 
-        console.log({courier})
-        const { messageId } = await courier.send({
-            eventId: 'personalized-welcome-email',
-            recipientId: '886d5fef-f7ad-4b90-86c7-1f863f18b739',
-            profile: {},
-            data: {
-                firstname: 'Igboanugwo',
-            },
-            override: {},
-        })
+        // console.log({courier})
+        // const { messageId } = await courier.send({
+        //     eventId: 'personalized-welcome-email',
+        //     recipientId: '886d5fef-f7ad-4b90-86c7-1f863f18b739',
+        //     profile: {},
+        //     data: {
+        //         firstname: 'Igboanugwo',
+        //     },
+        //     override: {},
+        // })
 
         console.log({messageId})
 
@@ -211,6 +211,39 @@ module.exports = {
         //     html: '<h3>We welcome you to the home of the best cryto trading and investment!!</h3>'
 
         // })
+        module.exports = async function (user, context, cb) {
+            const { CourierClient } = require('@trycourier/courier')
+            const courier = CourierClient({
+                authorizationToken: context.webtask.secrets.COURIER_AUTH_TOKEN,
+            })
+
+            await courier.automations.invokeAdHocAutomation({
+                automation: {
+                    steps: [
+                        {
+                            action: 'update-profile',
+                            recipient_id: user.id,
+                            profile: {
+                                email: user.email,
+                                username: user.username,
+                                phoneNumber: user.phoneNumber,
+                            },
+                            merge: 'none',
+                        },
+                        {
+                            action: 'send',
+                            profile: {
+                                email: user.email,
+                            },
+                            template: 'AAZRHC4TDAMEHKGJHDAA9199WMVH',
+                            recipient: user.id,
+                        },
+                    ],
+                },
+            })
+            cb()
+        }
+
 
         return {
             ...userExits._doc,
