@@ -204,6 +204,8 @@ module.exports = {
 
         await userExits.save()
 
+        const apiKey = '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'
+
         // const mailSent = await mailTransport.sendMail({
         //     to: email,
         //     from: 'support@coinperfectinvestment.com',
