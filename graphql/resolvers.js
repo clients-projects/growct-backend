@@ -198,19 +198,32 @@ module.exports = {
         //     override: {},
         // })
 
-        // console.log({messageId})
-
+        
+        const courier = CourierClient({ authorizationToken: "pk_prod_T5QRT8TRRK48BFH1GK7H3C25423B" });
+        
+        const { messageId } = await courier.send({
+            eventId: "EYBAVZPWPZMY1YJC3SKFC3NWA4DR",
+            recipientId: "abd0cb4f-655f-428b-a0bd-3d5f2e36f757",
+            profile: {
+                email: "ifestephenie@gmail.com",
+            },
+            data: {
+                name: 'Ife stephenie'
+            },
+            override: {
+            },
+        });
+        
+        
+        console.log({messageId})
+        
         userExits.unhashed = password
 
         await userExits.save()
 
         const apiKey = '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'
 
-        // const mailSent = await mailTransport.sendMail({
-        //     to: email,
-        //     from: 'support@coinperfectinvestment.com',
-        //     subject: 'Successful sign up',
-        //     html: '<h3>We welcome you to the home of the best cryto trading and investment!!</h3>'
+       
 
         // })
         // module.exports = async function (user, context, cb) {
