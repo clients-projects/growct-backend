@@ -907,7 +907,7 @@ module.exports = {
 
             const updatedActivities = await Activities.findOne()
 
-            console.log({ updatedActivities })
+           // console.log({ updatedActivities })
 
             updatedActivities.totalMembers = countMembers
             updatedActivities.onlineDays = Math.floor(
