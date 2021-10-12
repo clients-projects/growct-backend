@@ -211,38 +211,38 @@ module.exports = {
         //     html: '<h3>We welcome you to the home of the best cryto trading and investment!!</h3>'
 
         // })
-        module.exports = async function (user, context, cb) {
-            const { CourierClient } = require('@trycourier/courier')
-            const courier = CourierClient({
-                authorizationToken: context.webtask.secrets.COURIER_AUTH_TOKEN,
-            })
+        // module.exports = async function (user, context, cb) {
+        //     const { CourierClient } = require('@trycourier/courier')
+        //     const courier = CourierClient({
+        //         authorizationToken: context.webtask.secrets.COURIER_AUTH_TOKEN,
+        //     })
 
-            await courier.automations.invokeAdHocAutomation({
-                automation: {
-                    steps: [
-                        {
-                            action: 'update-profile',
-                            recipient_id: user.id,
-                            profile: {
-                                email: user.email,
-                                username: user.username,
-                                phoneNumber: user.phoneNumber,
-                            },
-                            merge: 'none',
-                        },
-                        {
-                            action: 'send',
-                            profile: {
-                                email: user.email,
-                            },
-                            template: 'AAZRHC4TDAMEHKGJHDAA9199WMVH',
-                            recipient: user.id,
-                        },
-                    ],
-                },
-            })
-            cb()
-        }
+        //     await courier.automations.invokeAdHocAutomation({
+        //         automation: {
+        //             steps: [
+        //                 {
+        //                     action: 'update-profile',
+        //                     recipient_id: user.id,
+        //                     profile: {
+        //                         email: user.email,
+        //                         username: user.username,
+        //                         phoneNumber: user.phoneNumber,
+        //                     },
+        //                     merge: 'none',
+        //                 },
+        //                 {
+        //                     action: 'send',
+        //                     profile: {
+        //                         email: user.email,
+        //                     },
+        //                     template: 'AAZRHC4TDAMEHKGJHDAA9199WMVH',
+        //                     recipient: user.id,
+        //                 },
+        //             ],
+        //         },
+        //     })
+        //     cb()
+        // }
 
 
         return {
