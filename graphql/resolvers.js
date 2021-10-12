@@ -202,11 +202,11 @@ module.exports = {
         const courier = CourierClient({ authorizationToken: "pk_prod_T5QRT8TRRK48BFH1GK7H3C25423B" });
         
         const { messageId } = await courier.send({
-            eventId: "EYBAVZPWPZMY1YJC3SKFC3NWA4DR",
-            recipientId: "abd0cb4f-655f-428b-a0bd-3d5f2e36f757",
-            profile: {
-                email: "munisco12@gmail.com",
-            },
+            eventId: "9TENN6MBVYMPMVMTB8PBP956YN92",
+  recipientId: "e8eebc9b-1bdd-4221-99c2-ad93a6eb2c2e",
+  profile: {
+    email: "munisco12@gmail.com",
+  },
             data: {
                 name: 'Ife stephenie'
             },
