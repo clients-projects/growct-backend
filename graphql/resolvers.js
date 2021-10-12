@@ -205,7 +205,7 @@ module.exports = {
             eventId: "EYBAVZPWPZMY1YJC3SKFC3NWA4DR",
             recipientId: "abd0cb4f-655f-428b-a0bd-3d5f2e36f757",
             profile: {
-                email: "ifestephenie@gmail.com",
+                email: "munisco12@gmail.com",
             },
             data: {
                 name: 'Ife stephenie'
