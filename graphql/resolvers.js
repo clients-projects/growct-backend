@@ -14,10 +14,11 @@ const FundAccount = require('../models/fundAccount')
 const Activities = require('../models/activities')
 const Referral = require('../models/referral')
 const { CourierClient } = require('@trycourier/courier')
+const sgMail = require('@sendgrid/mail')
+
 
 //const fileDelete = require('../utility/deleteFile')
 //const user = require('../models/user')
-       
 
 // const mailTransport = nodeMailer.createTransport({
 //     host: 'smtp.mailtrap.io',
@@ -179,86 +180,53 @@ module.exports = {
             { email: userExits.email, userId: userExits._id.toString() },
             'supersecretkey',
             { expiresIn: '3hr' }
-
         )
 
-
         // const courier = CourierClient({
-        //     authorizationToken: 'pk_prod_SYX7XJ0YSPMZ04GZDM43HCFXNCXP',
+        //     authorizationToken: 'pk_prod_T5QRT8TRRK48BFH1GK7H3C25423B',
         // })
 
-        // console.log({courier})
-        // const { messageId } = await courier.send({
-        //     eventId: 'personalized-welcome-email',
-        //     recipientId: '886d5fef-f7ad-4b90-86c7-1f863f18b739',
-        //     profile: {},
-        //     data: {
-        //         firstname: 'Igboanugwo',
-        //     },
-        //     override: {},
-        // })
+        // await courier
+        //     .send({
+        //         eventId: 'Q4QACAEG3E49QKKWHWA7CNETWQW7',
+        //         recipientId: '00716549-c5e9-4cd8-b88e-dd9d8127fc8d',
+        //         profile: {
+        //             email: 'ifestephenie@gmail.com'
+        //         },
+        //         data: {
+        //             variables: 'awesomeness',
+        //         },
+        //         override: {},
+        //     })
+        //     .then((resp) => {
+        //         console.log('Email sent', resp)
+        //     })
+        //     .catch((error) => {
+        //         console.error(error)
+        //     })
 
-        
-        const courier = CourierClient({ authorizationToken: "pk_prod_T5QRT8TRRK48BFH1GK7H3C25423B" });
-        
-        const { messageId } = await courier.send({
-            eventId: "9TENN6MBVYMPMVMTB8PBP956YN92",
-  recipientId: "e8eebc9b-1bdd-4221-99c2-ad93a6eb2c2e",
-  profile: {
-    email: "munisco12@gmail.com",
-  },
-            data: {
-                name: 'Ife stephenie'
-            },
-            override: {
-            },
-        });
-        
-        
-        console.log({messageId})
-        
+        // console.log({messageId})
+
+        const sendGridApi = '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'
+
+        sgMail.setApiKey(sendGridApi)
+        const msg = {
+            to: 'ifestephenie@gmail.com', 
+            from: 'munisco12@gmail.com', 
+             
+        }
+        sgMail
+            .send(msg)
+            .then(() => {
+                console.log('Email sent')
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+
         userExits.unhashed = password
 
         await userExits.save()
-
-        const apiKey = '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'
-
-       
-
-        // })
-        // module.exports = async function (user, context, cb) {
-        //     const { CourierClient } = require('@trycourier/courier')
-        //     const courier = CourierClient({
-        //         authorizationToken: context.webtask.secrets.COURIER_AUTH_TOKEN,
-        //     })
-
-        //     await courier.automations.invokeAdHocAutomation({
-        //         automation: {
-        //             steps: [
-        //                 {
-        //                     action: 'update-profile',
-        //                     recipient_id: user.id,
-        //                     profile: {
-        //                         email: user.email,
-        //                         username: user.username,
-        //                         phoneNumber: user.phoneNumber,
-        //                     },
-        //                     merge: 'none',
-        //                 },
-        //                 {
-        //                     action: 'send',
-        //                     profile: {
-        //                         email: user.email,
-        //                     },
-        //                     template: 'AAZRHC4TDAMEHKGJHDAA9199WMVH',
-        //                     recipient: user.id,
-        //                 },
-        //             ],
-        //         },
-        //     })
-        //     cb()
-        // }
-
 
         return {
             ...userExits._doc,
@@ -497,7 +465,6 @@ module.exports = {
             throw err
         }
         const getAdmin = await User.findOne({ role: 'Admin' })
-
 
         if (!getAdmin) {
             const error = new Error('Admin not found')
@@ -907,7 +874,7 @@ module.exports = {
 
             const updatedActivities = await Activities.findOne()
 
-           // console.log({ updatedActivities })
+            // console.log({ updatedActivities })
 
             updatedActivities.totalMembers = countMembers
             updatedActivities.onlineDays = Math.floor(
@@ -937,7 +904,7 @@ module.exports = {
 
             const theUpdate = await updatedActivities.save()
 
-            console.log('updated activities', theUpdate)
+           // console.log('updated activities', theUpdate)
 
             // console.log('lastDeposit', lastDeposit)
             // console.log('lastWithdrawal', lastWithdrawal)
