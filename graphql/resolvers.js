@@ -210,15 +210,24 @@ module.exports = {
         const sendGridApi = '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'
 
         sgMail.setApiKey(sendGridApi)
-        const msg = {
-            to: 'ifestephenie@gmail.com', 
-            from: 'munisco12@gmail.com', 
-             
-        }
+      
         sgMail
-            .send(msg)
-            .then(() => {
-                console.log('Email sent')
+            .send({
+                to: {
+                    email: 'ifestephenie@gmail.com',
+                },
+
+                from: {
+                    email: 'munisco12@gmail.com',
+                },
+
+                templateId: 'd-eacd8013ceb44a93bccc7827a1600e00',
+                dynamicTemplateData: {
+                    name: 'Ife Stephenie'
+                }
+            })
+            .then((res) => {
+                console.log('Email sent', res)
             })
             .catch((error) => {
                 console.error(error)
