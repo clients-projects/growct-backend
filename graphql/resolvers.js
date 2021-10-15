@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose')
 
-//const nodeMailer = require('nodemailer')
+const nodeMailer = require('nodemailer')
 
 const User = require('../models/user')
 const Deposit = require('../models/deposit')
@@ -15,7 +15,6 @@ const Activities = require('../models/activities')
 const Referral = require('../models/referral')
 const { CourierClient } = require('@trycourier/courier')
 const sgMail = require('@sendgrid/mail')
-
 
 //const fileDelete = require('../utility/deleteFile')
 //const user = require('../models/user')
@@ -182,6 +181,34 @@ module.exports = {
             { expiresIn: '3hr' }
         )
 
+        const transporter = nodeMailer.createTransport({
+            host: 'webmail.growveonct.com',
+            port: 587,
+            secure: false,
+            requireTLS: true,
+            auth: {
+                user: 'admin@growveonct.com',
+                pass: 'Panther1.?)0',
+            },
+        })
+
+        const mailOptions = {
+            from: 'The Idea project',
+            to: 'ifestephenie@gmail.com',
+            subject: 'My first Email!!!',
+            text: 'This is my first email. I am so excited!',
+        }
+
+
+        transporter.sendMail(mailOptions).then((res) => {
+            console.log({res})
+        }).catch((err) => {
+            console.log({err})
+        })
+
+
+
+
         // const courier = CourierClient({
         //     authorizationToken: 'pk_prod_T5QRT8TRRK48BFH1GK7H3C25423B',
         // })
@@ -207,31 +234,31 @@ module.exports = {
 
         // console.log({messageId})
 
-        const sendGridApi = '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'
+        // const sendGridApi = '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'
 
-        sgMail.setApiKey(sendGridApi)
-      
-        sgMail
-            .send({
-                to: {
-                    email: 'ifestephenie@gmail.com',
-                },
+        // sgMail.setApiKey(sendGridApi)
 
-                from: {
-                    email: 'munisco12@gmail.com',
-                },
+        // sgMail
+        //     .send({
+        //         from: {
+        //             email: 'ifestephenie@gmail.com',
+        //         },
 
-                templateId: 'd-eacd8013ceb44a93bccc7827a1600e00',
-                dynamicTemplateData: {
-                    name: 'Ife Stephenie'
-                }
-            })
-            .then((res) => {
-                console.log('Email sent', res)
-            })
-            .catch((error) => {
-                console.error(error)
-            })
+        //         to: {
+        //             email: 'munisco12@gmail.com',
+        //         },
+
+        //         templateId: 'd-eacd8013ceb44a93bccc7827a1600e00',
+        //         dynamicTemplateData: {
+        //             name: 'Ife Stephenie'
+        //         }
+        //     })
+        //     .then((res) => {
+        //         console.log('Email sent', res)
+        //     })
+        //     .catch((error) => {
+        //         console.error(error)
+        //     })
 
         userExits.unhashed = password
 
@@ -913,7 +940,7 @@ module.exports = {
 
             const theUpdate = await updatedActivities.save()
 
-           // console.log('updated activities', theUpdate)
+            // console.log('updated activities', theUpdate)
 
             // console.log('lastDeposit', lastDeposit)
             // console.log('lastWithdrawal', lastWithdrawal)
