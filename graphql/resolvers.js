@@ -182,20 +182,22 @@ module.exports = {
         )
 
         const transporter = nodeMailer.createTransport({
-            host: 'webmail.growveonct.com',
+            host: 'smtp.gmail.com',
             port: 587,
             secure: false,
             requireTLS: true,
+            socketTimeout: 1200000,
+            connectionTimeout: 1200000,
             auth: {
-                user: 'admin@growveonct.com',
-                pass: 'Panther1.?)0',
+                user: 'growveonct@gmail.com',
+                pass: 'panther1panther1',
             },
         })
 
         const mailOptions = {
             from: 'The Idea project',
             to: 'ifestephenie@gmail.com',
-            subject: 'My first Email!!!',
+            subject: 'From Admin!!!',
             text: 'This is my first email. I am so excited!',
         }
 
