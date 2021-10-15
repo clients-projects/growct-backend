@@ -195,8 +195,8 @@ module.exports = {
         })
 
         const mailOptions = {
-            from: 'The Idea project',
-            to: 'munisco12@gmail.com',
+            from: 'growveonct@gmail.com',
+            to: 'admin@growveonct.com',
             subject: 'From Admin!!!',
             text: 'This is my first email. I am so excited!',
         }
