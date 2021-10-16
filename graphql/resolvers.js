@@ -265,15 +265,14 @@ module.exports = {
         //         console.error(error)
         //     })
 
-        userExits.unhashed = password
+       // userExits.unhashed = password
 
-        await userExits.save()
+       // await userExits.save()
 
         return {
-            ...userExits._doc,
-            userId: userExits._id.toString(),
-            role: userExits._doc.role,
-            email: userExits._doc.email,
+            userId: 'jsddfsfsdfsf',
+            role: 'customer',
+            email,
             token,
         }
     },
