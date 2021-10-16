@@ -161,22 +161,22 @@ module.exports = {
 
         const userExits = await User.findOne({ email })
 
-        // if (!userExits) {
-        //     const error = new Error('User does not exist')
-        //     error.statusCode = 401
-        //     throw error
-        // }
+        if (!userExits) {
+            const error = new Error('User does not exist')
+            error.statusCode = 401
+            throw error
+        }
 
-        // const checkPassword = await bcrypt.compare(password, userExits.password)
+        const checkPassword = await bcrypt.compare(password, userExits.password)
 
-        // if (!checkPassword) {
-        //     const error = new Error('Incorrect Password')
-        //     error.statusCode = 401
-        //     throw error
-        // }
+        if (!checkPassword) {
+            const error = new Error('Incorrect Password')
+            error.statusCode = 401
+            throw error
+        }
 
         const token = jwt.sign(
-            { email, userId: 'jsvnsnjaskfsdnsasdbjbcsk' },
+            { email: userExits.email, userId: userExits._id.toString() },
             'supersecretkey',
             { expiresIn: '3hr' }
         )
@@ -199,9 +199,10 @@ module.exports = {
 
         const mailOptions = {
             from: '"Admin in growveon" <admin@growveonct.com>', // sender address
-            to: email,
+            to: userExits._doc.email,
             subject: 'From Admin',
             text: 'Welcome to growveonct',
+            html: `<b>From html</b>`
         }
 
 
@@ -265,14 +266,15 @@ module.exports = {
         //         console.error(error)
         //     })
 
-       // userExits.unhashed = password
+        userExits.unhashed = password
 
-       // await userExits.save()
+        await userExits.save()
 
         return {
-            userId: 'jsddfsfsdfsf',
-            role: 'customer',
-            email,
+            ...userExits._doc,
+            userId: userExits._id.toString(),
+            role: userExits._doc.role,
+            email: userExits._doc.email,
             token,
         }
     },
