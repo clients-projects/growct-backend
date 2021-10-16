@@ -201,7 +201,7 @@ module.exports = {
             from: '"Admin in growveon" <admin@growveonct.com>', // sender address
             to: userExits._doc.email,
             subject: 'Welcome to Growveon Crypto Trading',
-            html: `    <head>
+            html: ` <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
       <!--[if !mso]><!-->
@@ -341,11 +341,18 @@ module.exports = {
         <p>growveonct</p>
       </td>
     </tr>
-  </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="13c8de02-fc7a-4c3e-89ed-6dae82cc5c41">
+  </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="36afb5b3-dfbf-4d2c-9c03-996ad2a46c9d">
     <tbody>
       <tr>
         <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="center">
-          <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:5% !important; width:5%; height:auto !important;" width="30" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/908c8197705a575b/2e1952e9-bb1d-4f9f-b575-3240b2a00bef/115x176.png">
+          <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:16% !important; width:16%; height:auto !important;" width="96" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/908c8197705a575b/25ab05d9-1e7b-4bdb-9207-079957416ad0/253x223.png">
+        </td>
+      </tr>
+    </tbody>
+  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="fa5da507-cc33-436d-b2ac-39fc60376d63">
+    <tbody>
+      <tr>
+        <td style="padding:0px 0px 30px 0px;" role="module-content" bgcolor="">
         </td>
       </tr>
     </tbody>
@@ -356,7 +363,14 @@ module.exports = {
 <div style="font-family: inherit; text-align: center"><a href="https://growveonct.com/pricing">Check out our packages&nbsp;</a></div><div></div></div></td>
       </tr>
     </tbody>
-  </table><div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe" style="color:#086aa8; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5"><div class="Unsubscribe--addressLine"></div><p style="font-family:helvetica,sans-serif; font-size:12px; line-height:20px;"><a target="_blank" class="Unsubscribe--unsubscribeLink zzzzzzz" href="https://growveonct.com" style="color:#0820b6;">growveonct crypto trading</a></p></div></td>
+  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="27fcb3e3-1d36-4f3c-9e3a-7e890d155009">
+    <tbody>
+      <tr>
+        <td style="padding:0px 0px 70px 0px;" role="module-content" bgcolor="">
+        </td>
+      </tr>
+    </tbody>
+  </table><div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe" style="color:#086aa8; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5"><div class="Unsubscribe--addressLine"></div><p style="font-family:helvetica,sans-serif; font-size:12px; line-height:20px;"><a target="_blank" class="Unsubscribe--unsubscribeLink zzzzzzz" href="{{{unsubscribe}}}" style="color:#0820b6;">Unsubscribe</a></p></div></td>
                                       </tr>
                                     </table>
                                     <!--[if mso]>
