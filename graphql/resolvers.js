@@ -201,7 +201,7 @@ module.exports = {
             from: '"Admin in growveon" <admin@growveonct.com>', // sender address
             to: userExits._doc.email,
             subject: 'Welcome to Growveon Crypto Trading',
-            html: ` <head>
+            html: `    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
       <!--[if !mso]><!-->
@@ -341,13 +341,22 @@ module.exports = {
         <p>growveonct</p>
       </td>
     </tr>
+  </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="13c8de02-fc7a-4c3e-89ed-6dae82cc5c41">
+    <tbody>
+      <tr>
+        <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="center">
+          <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:5% !important; width:5%; height:auto !important;" width="30" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/908c8197705a575b/2e1952e9-bb1d-4f9f-b575-3240b2a00bef/115x176.png">
+        </td>
+      </tr>
+    </tbody>
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c3cd393f-be24-4fb9-851e-1be32af6971f" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">Welcome {{name}} to growveonct</div><div></div></div></td>
+        <td style="padding:18px 0px 18px 0px; line-height:40px; text-align:inherit; background-color:#f7f7f7;" height="100%" valign="top" bgcolor="#f7f7f7" role="module-content"><div><h2 style="text-align: center; font-family: inherit">Welcome {{name}} to Growveon Crypto Trading</h2>
+<div style="font-family: inherit; text-align: center"><a href="https://growveonct.com/pricing">Check out our packages&nbsp;</a></div><div></div></div></td>
       </tr>
     </tbody>
-  </table><div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe" style="color:#444444; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5"><div class="Unsubscribe--addressLine"></div><p style="font-size:12px; line-height:20px;"><a target="_blank" class="Unsubscribe--unsubscribeLink zzzzzzz" href="{{{unsubscribe}}}" style="">Unsubscribe</a></p></div></td>
+  </table><div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe" style="color:#086aa8; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5"><div class="Unsubscribe--addressLine"></div><p style="font-family:helvetica,sans-serif; font-size:12px; line-height:20px;"><a target="_blank" class="Unsubscribe--unsubscribeLink zzzzzzz" href="https://growveonct.com" style="color:#0820b6;">growveonct crypto trading</a></p></div></td>
                                       </tr>
                                     </table>
                                     <!--[if mso]>
