@@ -199,7 +199,7 @@ module.exports = {
 
         const mailOptions = {
             from: '"Admin in growveon" <admin@growveonct.com>', // sender address
-            to: userExits._doc.email,
+            to: email,
             subject: 'From Admin',
             text: 'Welcome to growveonct',
         }
