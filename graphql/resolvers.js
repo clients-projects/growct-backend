@@ -193,31 +193,30 @@ module.exports = {
                 pass: 'Panther1.?)0',
             },
             tls: {
-                rejectUnauthorized: false
-            }
+                rejectUnauthorized: false,
+            },
         })
 
         const mailOptions = {
             from: '"Admin in growveon" <admin@growveonct.com>', // sender address
             to: userExits._doc.email,
             subject: 'Welcome to Growveon Crypto Trading',
-            html: `
+            html: `<div>
             <h2 style="color: green">We are delighted to have you here</h2>
             <p>Check out our packages - <a href="https://growveonct.com/pricing">https://growveonct.com/pricing</a>
-            
             </p>
+            </div>
             `,
         }
 
-
-        transporter.sendMail(mailOptions).then((res) => {
-            console.log({res})
-        }).catch((err) => {
-            console.log({err})
-        })
-
-
-
+        transporter
+            .sendMail(mailOptions)
+            .then((res) => {
+                console.log({ res })
+            })
+            .catch((err) => {
+                console.log({ err })
+            })
 
         // const courier = CourierClient({
         //     authorizationToken: 'pk_prod_T5QRT8TRRK48BFH1GK7H3C25423B',
