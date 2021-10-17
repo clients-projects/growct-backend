@@ -958,7 +958,7 @@ module.exports = {
             `,
              }
 
-             transporter()
+            await transporter()
                  .sendMail(mailOptions)
                  .then((res) => {
                      console.log({ res })
