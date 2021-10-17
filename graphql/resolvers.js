@@ -341,7 +341,7 @@ module.exports = {
         <td height="100%" valign="top" role="module-content"><h2 style="text-align: center; font-family: inherit">Welcome to Growveon Crypto Trading</h2>
 <div style="font-family: inherit; padding: 1rem 0">Hi ${userExits._doc.username},</div>
 <p style="font-family: inherit; margin-bottom: 4rem">We are delighted to have you on this platform, It's awesome to see you take a strategic approach towards your financial growth.</p>
-<div style="font-family: inherit; text-align: center"><a href="https://growveonct.com/pricing">Check out our packages&nbsp;</a></div></td>
+<div style="font-family: inherit; text-align: left"><a href="https://growveonct.com/pricing">Check out our packages&nbsp;</a></div></td>
       </tr>
     </tbody>
   </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="27fcb3e3-1d36-4f3c-9e3a-7e890d155009">
