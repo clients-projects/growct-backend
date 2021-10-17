@@ -13,6 +13,7 @@ const deleteFile = require('./utility/deleteFile')
 const { graphqlHTTP } = require('express-graphql')
 const graphqlSchema = require('./graphql/schema')
 const graphqlResolver = require('./graphql/resolvers')
+const { transporter } = require('../nodemailer')
 
 const app = express()
 
@@ -130,5 +131,7 @@ mongoose
     .then((result) => {
         console.log('Connected to', PORT)
         app.listen(PORT)
+
+        transporter()
     })
     .catch((err) => console.log(err))
