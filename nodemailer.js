@@ -18,11 +18,5 @@ exports.transporter = function() {
                 rejectUnauthorized: false,
             },
         })
-        .verify()
-        .then((res) => {
-            console.log('connected to nodemailer', res)
-        })
-        .catch((err) => {
-            console.log('not connected to nodemailer', err)
-        })
+        
 }
