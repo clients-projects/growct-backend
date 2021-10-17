@@ -111,7 +111,7 @@ module.exports = {
 
                 const mailOptions = {
                     from: '"Admin in growveon" <admin@growveonct.com>',
-                    to: userExits._doc.email,
+                    to: userData.email,
                     subject: 'Welcome to Growveon Crypto Trading',
                     html: `  <head>
                                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
