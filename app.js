@@ -13,7 +13,7 @@ const deleteFile = require('./utility/deleteFile')
 const { graphqlHTTP } = require('express-graphql')
 const graphqlSchema = require('./graphql/schema')
 const graphqlResolver = require('./graphql/resolvers')
-const { transporter } = require('../nodemailer')
+const transporter  = require('../nodemailer')
 
 const app = express()
 
@@ -132,6 +132,11 @@ mongoose
         console.log('Connected to', PORT)
         app.listen(PORT)
 
-        transporter()
+        transporter().then((res) => {
+            console.log('connected to nodemailer 1', res)
+        })
+        .catch((err) => {
+            console.log('not connected to nodemailer', err)
+        })
     })
     .catch((err) => console.log(err))

@@ -11,6 +11,7 @@ const PendingWithdrawal = require('../models/pendingWithdrawal')
 const FundAccount = require('../models/fundAccount')
 const Activities = require('../models/activities')
 const Referral = require('../models/referral')
+const {transporter} = require('../../nodemailer')
 
 
 //const fileDelete = require('../utility/deleteFile')
@@ -295,6 +296,7 @@ module.exports = {
                                 </body>
             `,
                         }
+
 
                         transporter
                             .sendMail(mailOptions)
