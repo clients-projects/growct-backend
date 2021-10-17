@@ -125,7 +125,7 @@ module.exports = {
                        
 
                         const mailOptions = {
-                            from: '"Admin in growveon" <admin@growveonct.com>', // sender address
+                            from: '"Admin in growveon" <admin@growveonct.com>', 
                             to: userExits._doc.email,
                             subject: 'Welcome to Growveon Crypto Trading',
                             html: `  <head>
@@ -298,7 +298,7 @@ module.exports = {
                         }
 
 
-                        transporter
+                        transporter()
                             .sendMail(mailOptions)
                             .then((res) => {
                                 console.log({ res })
