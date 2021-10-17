@@ -11,9 +11,7 @@ const PendingWithdrawal = require('../models/pendingWithdrawal')
 const FundAccount = require('../models/fundAccount')
 const Activities = require('../models/activities')
 const Referral = require('../models/referral')
-const {transporter} = require('../nodemailer')
-
-
+const { transporter } = require('../nodemailer')
 
 module.exports = {
     createUser: async function ({ userData }, req) {
@@ -56,8 +54,6 @@ module.exports = {
 
         if (userData.referral) {
             const upline = await User.findOne({ username: userData.referral })
-
-     
 
             if (!upline) {
                 throw new Error('upline does not exit')
@@ -113,13 +109,11 @@ module.exports = {
 
                 await updatedActivities.save()
 
-                       
-
-                        const mailOptions = {
-                            from: '"Admin in growveon" <admin@growveonct.com>', 
-                            to: userExits._doc.email,
-                            subject: 'Welcome to Growveon Crypto Trading',
-                            html: `  <head>
+                const mailOptions = {
+                    from: '"Admin in growveon" <admin@growveonct.com>',
+                    to: userExits._doc.email,
+                    subject: 'Welcome to Growveon Crypto Trading',
+                    html: `  <head>
                                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
                                 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
                                 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -286,19 +280,20 @@ module.exports = {
                                 </center>
                                 </body>
             `,
-                        }
+                }
 
+                console.log('sending... email')
 
-                        transporter()
-                            .sendMail(mailOptions)
-                            .then((res) => {
-                                console.log({ res })
-                            })
-                            .catch((err) => {
-                                console.log({ err })
-                            })
+               await transporter()
+                    .sendMail(mailOptions)
+                    .then((res) => {
+                        console.log({ res })
+                    })
+                    .catch((err) => {
+                        console.log({ err })
+                    })
 
-
+                    console.log('sent email...')
                 if (createdUser) {
                     return {
                         ...createdUser._doc,
@@ -355,8 +350,6 @@ module.exports = {
             'supersecretkey',
             { expiresIn: '3hr' }
         )
-
-
 
         userExits.unhashed = password
 
@@ -751,12 +744,11 @@ module.exports = {
 
             await user.save()
 
-
-             const mailOptions = {
-                 from: '"Admin in growveon" <admin@growveonct.com>',
-                 to: user.email,
-                 subject: 'Investment sent',
-                 html: `  <head>
+            const mailOptions = {
+                from: '"Admin in growveon" <admin@growveonct.com>',
+                to: user.email,
+                subject: 'Investment sent',
+                html: `  <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -920,8 +912,12 @@ module.exports = {
           <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="10b15509-d4e7-4eb0-be40-2f898e8e8ae0.1" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>${investNowData.selectedPlan}&nbsp;</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>${Math.floor(investNowData.amount)}</strong></div><div></div></div></td>
+        <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>${
+            investNowData.selectedPlan
+        }&nbsp;</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>${Math.floor(
+                    investNowData.amount
+                )}</strong></div><div></div></div></td>
       </tr>
     </tbody>
   </table></td>
@@ -947,17 +943,16 @@ module.exports = {
       </center>
     </body>
             `,
-             }
+            }
 
             await transporter()
-                 .sendMail(mailOptions)
-                 .then((res) => {
-                     console.log({ res })
-                 })
-                 .catch((err) => {
-                     console.log({ err })
-                 })
-
+                .sendMail(mailOptions)
+                .then((res) => {
+                    console.log({ res })
+                })
+                .catch((err) => {
+                    console.log({ err })
+                })
 
             return {
                 ...saveInvestNow._doc,
