@@ -201,28 +201,11 @@ module.exports = {
             from: '"Admin in growveon" <admin@growveonct.com>', // sender address
             to: userExits._doc.email,
             subject: 'Welcome to Growveon Crypto Trading',
-            html: ` <head>
+            html: `  <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-      <!--[if !mso]><!-->
       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-      <!--<![endif]-->
-      <!--[if (gte mso 9)|(IE)]>
-      <xml>
-        <o:OfficeDocumentSettings>
-          <o:AllowPNG/>
-          <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-      </xml>
-      <![endif]-->
-      <!--[if (gte mso 9)|(IE)]>
-  <style type="text/css">
-    body {width: 600px;margin: 0 auto;}
-    table {border-collapse: collapse;}
-    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
-    img {-ms-interpolation-mode: bicubic;}
-  </style>
-<![endif]-->
+      
       <style type="text/css">
     body, p, div {
       font-family: arial,helvetica,sans-serif;
@@ -315,7 +298,6 @@ module.exports = {
       }
     }
   </style>
-      <!--user entered Head Start--><!--End Head user entered-->
     </head>
     <body>
       <center class="wrapper" data-link-color="#1188E6" data-body-style="font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; background-color:#FFFFFF;">
@@ -329,10 +311,7 @@ module.exports = {
                       <table width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
                           <td>
-                            <!--[if mso]>
-    <center>
-    <table><tr><td width="600">
-  <![endif]-->
+                          
                                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:600px;" align="center">
                                       <tr>
                                         <td role="modules-container" style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#FFFFFF" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
@@ -356,11 +335,13 @@ module.exports = {
         </td>
       </tr>
     </tbody>
-  </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c3cd393f-be24-4fb9-851e-1be32af6971f" data-mc-module-version="2019-10-22">
+  </table><table class="module" role="module" data-type="code" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c3cd393f-be24-4fb9-851e-1be32af6971f">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:40px; text-align:inherit; background-color:#f7f7f7;" height="100%" valign="top" bgcolor="#f7f7f7" role="module-content"><div><h2 style="text-align: center; font-family: inherit">Welcome ${userExits._doc.email} to Growveon Crypto Trading</h2>
-<div style="font-family: inherit; text-align: center"><a href="https://growveonct.com/pricing">Check out our packages&nbsp;</a></div><div></div></div></td>
+        <td height="100%" valign="top" role="module-content"><h2 style="text-align: center; font-family: inherit">Welcome to Growveon Crypto Trading</h2>
+<div style="font-family: inherit; padding: 1rem 0">Hi ${userExits._doc.username},</div>
+<p style="font-family: inherit; margin-bottom: 4rem">We are delighted to have you on this platform, It's awesome to see you take a strategic approach towards your financial growth.</p>
+<div style="font-family: inherit; text-align: center"><a href="https://growveonct.com/pricing">Check out our packages&nbsp;</a></div></td>
       </tr>
     </tbody>
   </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="27fcb3e3-1d36-4f3c-9e3a-7e890d155009">
@@ -373,12 +354,7 @@ module.exports = {
   </table><div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe" style="color:#086aa8; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5"><div class="Unsubscribe--addressLine"></div><p style="font-family:helvetica,sans-serif; font-size:12px; line-height:20px;"><a target="_blank" class="Unsubscribe--unsubscribeLink zzzzzzz" href="https://growveonct.com" style="color:#0820b6;">growveon crypto trading</a></p></div></td>
                                       </tr>
                                     </table>
-                                    <!--[if mso]>
-                                  </td>
-                                </tr>
-                              </table>
-                            </center>
-                            <![endif]-->
+                                 
                           </td>
                         </tr>
                       </table>
