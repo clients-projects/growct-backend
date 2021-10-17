@@ -4,7 +4,7 @@ exports.transporter = function () {
 
     return nodeMailer.createTransport({
         host: 'mail.growveonct.com',
-        port: 587,
+        port: 465,
         secure: true,
         requireTLS: true,
         socketTimeout: 1200000,
