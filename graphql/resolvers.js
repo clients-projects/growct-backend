@@ -359,7 +359,7 @@ module.exports = {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c3cd393f-be24-4fb9-851e-1be32af6971f" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:40px; text-align:inherit; background-color:#f7f7f7;" height="100%" valign="top" bgcolor="#f7f7f7" role="module-content"><div><h2 style="text-align: center; font-family: inherit">Welcome {{name}} to Growveon Crypto Trading</h2>
+        <td style="padding:18px 0px 18px 0px; line-height:40px; text-align:inherit; background-color:#f7f7f7;" height="100%" valign="top" bgcolor="#f7f7f7" role="module-content"><div><h2 style="text-align: center; font-family: inherit">Welcome ${userExits._doc.email} to Growveon Crypto Trading</h2>
 <div style="font-family: inherit; text-align: center"><a href="https://growveonct.com/pricing">Check out our packages&nbsp;</a></div><div></div></div></td>
       </tr>
     </tbody>
