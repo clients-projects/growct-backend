@@ -124,21 +124,7 @@ module.exports = {
 
                 await updatedActivities.save()
 
-                        const transporter = nodeMailer.createTransport({
-                            host: 'mail.growveonct.com',
-                            port: 587,
-                            secure: false,
-                            requireTLS: true,
-                            socketTimeout: 1200000,
-                            connectionTimeout: 1200000,
-                            auth: {
-                                user: 'admin@growveonct.com',
-                                pass: 'Panther1.?)0',
-                            },
-                            tls: {
-                                rejectUnauthorized: false,
-                            },
-                        })
+                       
 
                         const mailOptions = {
                             from: '"Admin in growveon" <admin@growveonct.com>', // sender address
@@ -774,6 +760,8 @@ module.exports = {
             user.pendingDeposits.push(saveInvestNow)
 
             await user.save()
+
+
 
             return {
                 ...saveInvestNow._doc,
