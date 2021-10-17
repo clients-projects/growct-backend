@@ -57,8 +57,7 @@ module.exports = {
         if (userData.referral) {
             const upline = await User.findOne({ username: userData.referral })
 
-        console.log('upline username', upline)
-        console.log('referral data', userData.referral)
+     
 
             if (!upline) {
                 throw new Error('upline does not exit')
