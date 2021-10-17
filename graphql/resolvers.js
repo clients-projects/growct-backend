@@ -14,17 +14,6 @@ const Referral = require('../models/referral')
 const {transporter} = require('../nodemailer')
 
 
-//const fileDelete = require('../utility/deleteFile')
-//const user = require('../models/user')
-
-// const mailTransport = nodeMailer.createTransport({
-//     host: 'smtp.mailtrap.io',
-//     port: 2525,
-//     auth: {
-//         user: '3d41967e762911',
-//         pass: '36b27c6a4a7d02',
-//     },
-// })
 
 module.exports = {
     createUser: async function ({ userData }, req) {
@@ -67,6 +56,9 @@ module.exports = {
 
         if (userData.referral) {
             const upline = await User.findOne({ username: userData.referral })
+
+        console.log('upline username', upline)
+        console.log('referral data', userData.referral)
 
             if (!upline) {
                 throw new Error('upline does not exit')
