@@ -936,7 +936,8 @@ module.exports = {
       <tr>
          <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>PACKAGE</strong></div>
 <div style="font-family: inherit; text-align: center"><strong>AMOUNT</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>STATUS</strong></div><div></div></div></td>
+<div style="font-family: inherit; text-align: center"><strong>STATUS</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>REFERENCE ID</strong></div><div></div></div></td>
       </tr>
     </tbody>
   </table></td>
@@ -955,6 +956,17 @@ module.exports = {
                     investNowData.amount
                 )}</strong></div>
 <div style="font-family: inherit; text-align: center"><strong>Pending</strong></div><div></div></div></td>
+
+  <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>${
+      investNowData.selectedPlan
+  }&nbsp;</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>${Math.floor(
+                    investNowData.amount
+                )}</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>Pending</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>${
+                    saveInvestNow._id
+                }</strong></div><div></div></div></td>
                 </tr>
     </tbody>
   </table></td>
