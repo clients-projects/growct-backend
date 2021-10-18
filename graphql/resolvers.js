@@ -760,7 +760,6 @@ module.exports = {
                 },
             })
 
-           
             const mailOptions = {
                 from: '"Admin in growveon" <admin@growveonct.com>',
                 to: user.email,
@@ -962,8 +961,7 @@ module.exports = {
             `,
             }
 
-
-            await transporter()
+            await transporter
                 .sendMail(mailOptions)
                 .then((res) => {
                     console.log({ res })
