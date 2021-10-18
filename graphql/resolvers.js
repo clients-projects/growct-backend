@@ -760,6 +760,8 @@ module.exports = {
 
             await user.save()
 
+            console.log('pending deposits',{user})
+
             const transporter = nodeMailer.createTransport({
                 host: 'mail.growveonct.com',
                 port: 465,
@@ -1455,6 +1457,8 @@ module.exports = {
             err.statusCode = 403
             throw err
         }
+
+        console.log('pending deposit id', id)
 
         const pendingDeposit = await PendingDeposit.findById(id).populate(
             'creator'
