@@ -736,7 +736,7 @@ module.exports = {
             const mailOptions = {
                 from: '"Admin in growveon" <admin@growveonct.com>',
                 to: user.email,
-                subject: 'Investment Approved',
+                subject: 'Investment Received',
                 html: `  <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -823,7 +823,7 @@ module.exports = {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f81d4d6e-25dc-440f-b69f-fc44f70ffcb7" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:3px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment package has been successfully approved</h3>
+        <td style="padding:18px 0px 18px 0px; line-height:3px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been received, please wait for approval</h3>
 <h3 style="text-align: center"><br></h3><div></div></div></td>
       </tr>
     </tbody>
@@ -1452,7 +1452,7 @@ module.exports = {
                   const mailOptions = {
                       from: '"Admin in growveon" <admin@growveonct.com>',
                       to: user.email,
-                      subject: 'Investment sent',
+                      subject: 'Investment Approved',
                       html: `  <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -1570,7 +1570,7 @@ module.exports = {
                                         <td role="modules-container" style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#FFFFFF" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
     <tr>
       <td role="module-content">
-        <p>pending approval</p>
+        <p>Investment Approved</p>
       </td>
     </tr>
   </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="ce92d3e3-a663-4a3f-aa7d-ac8014399590">
@@ -1584,7 +1584,7 @@ module.exports = {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f81d4d6e-25dc-440f-b69f-fc44f70ffcb7" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:3px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been received, please wait for approval</h3>
+        <td style="padding:18px 0px 18px 0px; line-height:3px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been successfuly approved</h3>
 <h3 style="text-align: center"><br></h3><div></div></div></td>
       </tr>
     </tbody>
@@ -1626,7 +1626,7 @@ module.exports = {
 <div style="font-family: inherit; text-align: center"><strong>${Math.floor(
                           investNowData.amount
                       )}</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>Pending</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>Approved</strong></div>
 <div style="font-family: inherit; text-align: center"><strong>${
                           saveInvestNow._id
                       }</strong></div><div></div></div></td>
