@@ -735,143 +735,226 @@ module.exports = {
                 from: '"Admin in growveon" <admin@growveonct.com>',
                 to: user.email,
                 subject: 'Investment Received',
-                html: `<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-
+                html: `    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+      <!--[if !mso]><!-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <!--<![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
   <style type="text/css">
-   
-      body,
-      p,
-      div {
-      font-family: 'Poppins', helvetica, sans-serif;
-      }
-
+    body {width: 600px;margin: 0 auto;}
+    table {border-collapse: collapse;}
+    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+    img {-ms-interpolation-mode: bicubic;}
+  </style>
+<![endif]-->
+      <style type="text/css">
+    body, p, div {
+      font-family: arial,helvetica,sans-serif;
+      font-size: 14px;
+    }
     body {
       color: #000000;
-      font-weight: 500;
     }
-
     body a {
-      color: #1188e6;
+      color: #1188E6;
       text-decoration: none;
     }
-
-   
+    p { margin: 0; padding: 0; }
+    table.wrapper {
+      width:100% !important;
+      table-layout: fixed;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
     img.max-width {
-      max-width: 20% !important;
+      max-width: 100% !important;
     }
-
-    .deposit {
-
-      color: black;
-      display: grid;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      justify-items: center;
-      gap: 2.6rem;
-      padding: 1rem;
-      grid-template-rows: min-content max-content;
+    .column.of-2 {
+      width: 50%;
     }
-
-
-
-    .deposit__heading {
-      align-self: center;
-      color: black;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-top: 2rem;
+    .column.of-3 {
+      width: 33.333%;
     }
-
-    .deposit__info {
-      text-align: center;
-      color: black;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-self:  center;
-      grid-template-rows: min-content;
+    .column.of-4 {
+      width: 25%;
     }
-
-    .deposit__info--left {
-      padding: .7rem 1rem;
+    ul ul ul ul  {
+      list-style-type: disc !important;
     }
-
-    .deposit__info--right {
-      padding: .7rem 1rem;
+    ol ol {
+      list-style-type: lower-roman !important;
+    }
+    ol ol ol {
+      list-style-type: lower-latin !important;
+    }
+    ol ol ol ol {
+      list-style-type: decimal !important;
+    }
+    @media screen and (max-width:480px) {
+      .preheader .rightColumnContent,
+      .footer .rightColumnContent {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent div,
+      .preheader .rightColumnContent span,
+      .footer .rightColumnContent div,
+      .footer .rightColumnContent span {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent,
+      .preheader .leftColumnContent {
+        font-size: 80% !important;
+        padding: 5px 0;
+      }
+      table.wrapper-mobile {
+        width: 100% !important;
+        table-layout: fixed;
+      }
+      img.max-width {
+        height: auto !important;
+        max-width: 100% !important;
+      }
+      a.bulletproof-button {
+        display: block !important;
+        width: auto !important;
+        font-size: 80%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .columns {
+        width: 100% !important;
+      }
+      .column {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .social-icon-column {
+        display: inline-block !important;
+      }
     }
   </style>
-
-</head>
-
-<body>
-
-
-
-  <div class='deposit'>
-    <img class="
-                                                                                        max-width
-                                                                                    " border="0" style="
-                                                                                        display: block;
-                                                                                        color: #000000;
-                                                                                        text-decoration: none;
-                                                                                        font-family: Helvetica,
-                                                                                            arial,
-                                                                                            sans-serif;
-                                                                                        font-size: 16px;
-                                                                                        max-width: 16% !important;
-                                                                                        width: 16%;
-                                                                                        height: auto !important;
-                                                                                    " width="96" alt=""
-      data-proportionally-constrained="true" data-responsive="true"
-      src="http://cdn.mcauto-images-production.sendgrid.net/908c8197705a575b/25ab05d9-1e7b-4bdb-9207-079957416ad0/253x223.png" />
-    <h3 class='deposit__heading'>Deposit
-      Confirmation</h3>
-    <div class='deposit__info'>
-      <p class='deposit__info--left'>Reference Id
-      </p>
-      <p class='deposit__info--right'">
-        ${saveInvestNow._id}
-      </p>
-      <p class='deposit__info--left'>Plan
-      </p>
-      <p class='deposit__info--right' style="text-transform: uppercase;">
-        ${investNowData.selectedPlan}
-      </p>
-     
-      <p class='deposit__info--left'>
-        Principal Return</p>
-      <p class='deposit__info--right'>Yes
-      </p>
-     
-      <p class='deposit__info--left'>
-        Credit Amount</p>
-      <p class='deposit__info--right'>
-        ${investNowData.amount}</p>
-      <p class='deposit__info--left'>
-        Deposit Fee</p>
-      <p class='deposit__info--right'>
-        0.00% + $0.00 (min. $0.00 max. $0.00)
-      </p>
-      <p class='deposit__info--left'>
-        Order Status</p>
-      <p class='deposit__info--right'>
-        Pending </p>
-    </div>
-
-    <p style="
-                                                                            font-size: 12px;
-                                                                            line-height: 20px;
-                                                                        ">
-      <a target="_blank" href="https://growveonct.com">growveon crypto trading</a>
-    </p>
-
-</body>
+      <!--user entered Head Start--><!--End Head user entered-->
+    </head>
+    <body>
+      <center class="wrapper" data-link-color="#1188E6" data-body-style="font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; background-color:#FFFFFF;">
+        <div class="webkit">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#FFFFFF">
+            <tr>
+              <td valign="top" bgcolor="#FFFFFF" width="100%">
+                <table width="100%" role="content-container" class="outer" align="center" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td width="100%">
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td>
+                            <!--[if mso]>
+    <center>
+    <table><tr><td width="600">
+  <![endif]-->
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:600px;" align="center">
+                                      <tr>
+                                        <td role="modules-container" style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#FFFFFF" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
+    <tr>
+      <td role="module-content">
+        <p>pending approval</p>
+      </td>
+    </tr>
+  </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="ce92d3e3-a663-4a3f-aa7d-ac8014399590">
+    <tbody>
+      <tr>
+        <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="center">
+          <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:16% !important; width:16%; height:auto !important;" width="96" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/908c8197705a575b/25ab05d9-1e7b-4bdb-9207-079957416ad0/253x223.png">
+        </td>
+      </tr>
+    </tbody>
+  </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f81d4d6e-25dc-440f-b69f-fc44f70ffcb7" data-mc-module-version="2019-10-22">
+    <tbody>
+      <tr>
+        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been received, please wait for approval</h3>
+<h3 style="text-align: center"><br></h3><div></div></div></td>
+      </tr>
+    </tbody>
+  </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="e93ffa99-ae88-443d-ae4b-956b09cea887" data-mc-module-version="2019-10-22">
+    <tbody>
+      <tr>
+        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><br></div>
+<div style="font-family: inherit; text-align: center">These are the details of your investment package</div><div></div></div></td>
+      </tr>
+    </tbody>
+  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 0px 0px 0px;" bgcolor="#FFFFFF" data-distribution="1">
+    <tbody>
+      <tr role="module-content">
+        <td height="100%" valign="top"><table width="580" style="width:580px; border-spacing:0; border-collapse:collapse; margin:0px 10px 0px 10px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+      <tbody>
+        <tr>
+          <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="10b15509-d4e7-4eb0-be40-2f898e8e8ae0" data-mc-module-version="2019-10-22">
+    <tbody>
+      <tr>
+        <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top"
+          bgcolor="" role="module-content">
+          <div>
+            <div style="font-family: inherit; text-align: center"><strong>PACKAGE = ( ${investNowData.selectedPlan}
+)</strong></div>
+<div style="font-family: inherit; text-align: center"><span
+    style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; text-align: center; color: #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">AMOUNT
+    = ( ${investNowData.amount}
+)</span><br>
+<strong>STATUS = (Pending)</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>REFERENCE ID = ( ${saveInvestNow._id}
+)</strong></div><div></div></div></td>
+      </tr>
+    </tbody>
+  </table></td>
+        </tr>
+      </tbody>
+    </table></td>
+      </tr>
+    </tbody>
+  </table>
+  <div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe"
+    style="color:#444444; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;"
+    data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5">
+    <div class="Unsubscribe--addressLine"></div>
+    <p style="font-size:12px; line-height:20px;"><a target="_blank" class="Unsubscribe--unsubscribeLink zzzzzzz"
+        href="https://growveonct.com" style="">growveon crypto trading</a></p>
+  </div>
+  </td>
+                                      </tr>
+                                    </table>
+                                    <!--[if mso]>
+                                  </td>
+                                </tr>
+                              </table>
+                            </center>
+                            <![endif]-->
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </center>
+    </body>
             `,
             }
 
