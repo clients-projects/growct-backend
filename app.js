@@ -132,13 +132,13 @@ mongoose
         console.log('Connected to', PORT)
         app.listen(PORT)
 
-        transporter()
-            .verify()
-            .then((res) => {
-                console.log('connected to nodemailer', res)
-            })
-            .catch((err) => {
-                console.log('not connected to nodemailer', err)
-            })
+        // transporter()
+        //     .verify()
+        //     .then((res) => {
+        //         console.log('connected to nodemailer', res)
+        //     })
+        //     .catch((err) => {
+        //         console.log('not connected to nodemailer', err)
+        //     })
     })
     .catch((err) => console.log(err))
