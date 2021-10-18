@@ -931,8 +931,9 @@ module.exports = {
           <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="10b15509-d4e7-4eb0-be40-2f898e8e8ae0" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>PACKAGE</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>AMOUNT</strong></div><div></div></div></td>
+         <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>PACKAGE</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>AMOUNT</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>STATUS</strong></div><div></div></div></td>
       </tr>
     </tbody>
   </table></td>
