@@ -109,27 +109,27 @@ module.exports = {
 
                 await updatedActivities.save()
 
-                 const transporter = nodeMailer.createTransport({
-                     host: 'mail.growveonct.com',
-                     port: 465,
-                     secure: true,
-                     requireTLS: true,
-                     socketTimeout: 1200000,
-                     connectionTimeout: 1200000,
-                     auth: {
-                         user: 'admin@growveonct.com',
-                         pass: 'Panther1.?)0',
-                     },
-                     tls: {
-                         rejectUnauthorized: false,
-                     },
-                 })
+                const transporter = nodeMailer.createTransport({
+                    host: 'mail.growveonct.com',
+                    port: 465,
+                    secure: true,
+                    requireTLS: true,
+                    socketTimeout: 1200000,
+                    connectionTimeout: 1200000,
+                    auth: {
+                        user: 'admin@growveonct.com',
+                        pass: 'Panther1.?)0',
+                    },
+                    tls: {
+                        rejectUnauthorized: false,
+                    },
+                })
 
-                    const mailOptions = {
-                        from: '"Admin in growveon" <admin@growveonct.com>',
-                        to: userData.email,
-                        subject: 'Welcome to Growveon Crypto Trading',
-                        html: `  <head>
+                const mailOptions = {
+                    from: '"Admin in growveon" <admin@growveonct.com>',
+                    to: userData.email,
+                    subject: 'Welcome to Growveon Crypto Trading',
+                    html: `  <head>
                                     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
                                     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
                                     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -251,18 +251,18 @@ module.exports = {
                                     </center>
                                     </body>
                 `,
-                    }
+                }
 
-                    console.log('sending... email')
+                console.log('sending... email')
 
-                   transporter
-                        .sendMail(mailOptions)
-                        .then((res) => {
-                            console.log({ res })
-                        })
-                        .catch((err) => {
-                            console.log({ err })
-                        })
+                transporter
+                    .sendMail(mailOptions)
+                    .then((res) => {
+                        console.log({ res })
+                    })
+                    .catch((err) => {
+                        console.log({ err })
+                    })
 
                 console.log('sent email...')
                 if (createdUser) {
@@ -715,8 +715,6 @@ module.exports = {
 
             await user.save()
 
-          
-
             const transporter = nodeMailer.createTransport({
                 host: 'mail.growveonct.com',
                 port: 465,
@@ -898,7 +896,7 @@ module.exports = {
 
             console.log('sending mail.....')
 
-             transporter
+            transporter
                 .sendMail(mailOptions)
                 .then((res) => {
                     console.log({ res })
@@ -1433,27 +1431,27 @@ module.exports = {
 
                 await updatedActivities.save()
 
-                  const transporter = nodeMailer.createTransport({
-                      host: 'mail.growveonct.com',
-                      port: 465,
-                      secure: true,
-                      requireTLS: true,
-                      socketTimeout: 1200000,
-                      connectionTimeout: 1200000,
-                      auth: {
-                          user: 'admin@growveonct.com',
-                          pass: 'Panther1.?)0',
-                      },
-                      tls: {
-                          rejectUnauthorized: false,
-                      },
-                  })
+                const transporter = nodeMailer.createTransport({
+                    host: 'mail.growveonct.com',
+                    port: 465,
+                    secure: true,
+                    requireTLS: true,
+                    socketTimeout: 1200000,
+                    connectionTimeout: 1200000,
+                    auth: {
+                        user: 'admin@growveonct.com',
+                        pass: 'Panther1.?)0',
+                    },
+                    tls: {
+                        rejectUnauthorized: false,
+                    },
+                })
 
-                  const mailOptions = {
-                      from: '"Admin in growveon" <admin@growveonct.com>',
-                      to: user.email,
-                      subject: 'Investment Approved',
-                      html: `  <head>
+                const mailOptions = {
+                    from: '"Admin in growveon" <admin@growveonct.com>',
+                    to: user.email,
+                    subject: 'Investment Approved',
+                    html: `  <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -1576,15 +1574,13 @@ module.exports = {
       <tr>
 
   <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>${
-      investNowData.selectedPlan
+      pendingDeposit.plan
   }&nbsp;</strong></div>
 <div style="font-family: inherit; text-align: center"><strong>${Math.floor(
-                          investNowData.amount
-                      )}</strong></div>
+                        pendingDeposit.amount
+                    )}</strong></div>
 <div style="font-family: inherit; text-align: center"><strong>Approved</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>${
-                          saveInvestNow._id
-                      }</strong></div><div></div></div></td>
+<div style="font-family: inherit; text-align: center"><strong>${PostId}</strong></div><div></div></div></td>
                 </tr>
     </tbody>
   </table></td>
@@ -1610,20 +1606,18 @@ module.exports = {
       </center>
     </body>
             `,
-                  }
+                }
 
-                  console.log('sending mail.....')
+                console.log('sending mail.....')
 
-                  transporter
-                      .sendMail(mailOptions)
-                      .then((res) => {
-                          console.log({ res })
-                      })
-                      .catch((err) => {
-                          console.log({ err })
-                      })
-
-          
+                transporter
+                    .sendMail(mailOptions)
+                    .then((res) => {
+                        console.log({ res })
+                    })
+                    .catch((err) => {
+                        console.log({ err })
+                    })
 
                 return {
                     ...newDeposit._doc,
