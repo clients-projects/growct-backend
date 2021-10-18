@@ -744,7 +744,7 @@ module.exports = {
 
             await user.save()
 
-            const transporter = await nodeMailer.createTransport({
+            const transporter = nodeMailer.createTransport({
                 host: 'mail.growveonct.com',
                 port: 465,
                 secure: true,
@@ -960,6 +960,8 @@ module.exports = {
     </body>
             `,
             }
+
+            console.log('sending mail.....')
 
              transporter
                 .sendMail(mailOptions)
