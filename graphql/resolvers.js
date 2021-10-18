@@ -760,8 +760,7 @@ module.exports = {
 
             await user.save()
 
-            console.log('pending deposits',{user})
-            console.log('pending saveinvestnow', saveInvestNow._id)
+          
 
             const transporter = nodeMailer.createTransport({
                 host: 'mail.growveonct.com',
@@ -1523,6 +1522,8 @@ module.exports = {
                 )
 
                 await updatedActivities.save()
+
+                
 
                 return {
                     ...newDeposit._doc,
