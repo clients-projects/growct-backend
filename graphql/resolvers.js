@@ -912,7 +912,7 @@ module.exports = {
             <div style="font-family: inherit; text-align: center"><strong>PACKAGE = ( ${investNowData.selectedPlan}
 )</strong></div>
 <div style="font-family: inherit; text-align: center"><span
-    style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; text-align: center; color: #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">AMOUNT = ( ${investNowData.amount} )</span><br>
+    style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; text-align: center; color: #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">AMOUNT = (${Math.floor(investNowData.amount)})</span><br>
 <strong>STATUS = (Pending)</strong></div>
 <div style="font-family: inherit; text-align: center"><strong>REFERENCE ID = (${saveInvestNow._id})</strong></div><div></div></div></td>
       </tr>
@@ -1514,8 +1514,25 @@ module.exports = {
                     html: `  <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+      <!--[if !mso]><!-->
       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-   
+      <!--<![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+  <style type="text/css">
+    body {width: 600px;margin: 0 auto;}
+    table {border-collapse: collapse;}
+    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+    img {-ms-interpolation-mode: bicubic;}
+  </style>
+<![endif]-->
       <style type="text/css">
     body, p, div {
       font-family: arial,helvetica,sans-serif;
@@ -1561,7 +1578,52 @@ module.exports = {
     ol ol ol ol {
       list-style-type: decimal !important;
     }
-    
+    @media screen and (max-width:480px) {
+      .preheader .rightColumnContent,
+      .footer .rightColumnContent {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent div,
+      .preheader .rightColumnContent span,
+      .footer .rightColumnContent div,
+      .footer .rightColumnContent span {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent,
+      .preheader .leftColumnContent {
+        font-size: 80% !important;
+        padding: 5px 0;
+      }
+      table.wrapper-mobile {
+        width: 100% !important;
+        table-layout: fixed;
+      }
+      img.max-width {
+        height: auto !important;
+        max-width: 100% !important;
+      }
+      a.bulletproof-button {
+        display: block !important;
+        width: auto !important;
+        font-size: 80%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .columns {
+        width: 100% !important;
+      }
+      .column {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .social-icon-column {
+        display: inline-block !important;
+      }
+    }
   </style>
       <!--user entered Head Start--><!--End Head user entered-->
     </head>
@@ -1577,7 +1639,10 @@ module.exports = {
                       <table width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
                           <td>
-                 
+                            <!--[if mso]>
+    <center>
+    <table><tr><td width="600">
+  <![endif]-->
                                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:600px;" align="center">
                                       <tr>
                                         <td role="modules-container" style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#FFFFFF" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
@@ -1597,51 +1662,35 @@ module.exports = {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f81d4d6e-25dc-440f-b69f-fc44f70ffcb7" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:3px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been successfuly approved</h3>
+        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been received, please wait for approval</h3>
 <h3 style="text-align: center"><br></h3><div></div></div></td>
       </tr>
     </tbody>
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="e93ffa99-ae88-443d-ae4b-956b09cea887" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:0px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><br></div>
+        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><br></div>
 <div style="font-family: inherit; text-align: center">These are the details of your investment package</div><div></div></div></td>
       </tr>
     </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 0px 0px 0px;" bgcolor="#FFFFFF" data-distribution="1,1">
+  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 0px 0px 0px;" bgcolor="#FFFFFF" data-distribution="1">
     <tbody>
       <tr role="module-content">
-        <td height="100%" valign="top"><table width="290" style="width:290px; border-spacing:0; border-collapse:collapse; margin:0px 10px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+        <td height="100%" valign="top"><table width="580" style="width:580px; border-spacing:0; border-collapse:collapse; margin:0px 10px 0px 10px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
       <tbody>
         <tr>
           <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="10b15509-d4e7-4eb0-be40-2f898e8e8ae0" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-         <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>PACKAGE</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>AMOUNT</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>STATUS</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>REFERENCE ID</strong></div><div></div></div></td>
+        <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top"
+          bgcolor="" role="module-content">
+          <div>
+            <div style="font-family: inherit; text-align: center"><strong>PACKAGE = (${pendingDeposit.planName})</strong></div>
+<div style="font-family: inherit; text-align: center"><span
+    style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; text-align: center; color: #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">AMOUNT = ( ${Math.floor(pendingDeposit.amount)} )</span><br>
+<strong>STATUS = (Approved)</strong></div>
+<div style="font-family: inherit; text-align: center"><strong>REFERENCE ID = (${PostId})</strong></div><div></div></div></td>
       </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table><table width="290" style="width:290px; border-spacing:0; border-collapse:collapse; margin:0px 0px 0px 10px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-1">
-      <tbody>
-        <tr>
-          <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="10b15509-d4e7-4eb0-be40-2f898e8e8ae0.1" data-mc-module-version="2019-10-22">
-    <tbody>
-      <tr>
-
-  <td style="padding:18px 0px 18px 0px; line-height:23px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><strong>${
-      pendingDeposit.plan
-  }&nbsp;</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>${Math.floor(
-                        pendingDeposit.amount
-                    )}</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>Approved</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>${PostId}</strong></div><div></div></div></td>
-                </tr>
     </tbody>
   </table></td>
         </tr>
@@ -1649,10 +1698,23 @@ module.exports = {
     </table></td>
       </tr>
     </tbody>
-  </table><div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe" style="color:#444444; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5"><div class="Unsubscribe--addressLine"></div><p style="font-size:12px; line-height:20px; margin-top:3rem"><a target="_blank" class="Unsubscribe--unsubscribeLink zzzzzzz" href="https://growveonct.com" style="">growveon crypto trading</a></p></div></td>
+  </table>
+  <div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe"
+    style="color:#444444; font-size:12px; line-height:20px; padding:16px 16px 16px 16px; text-align:Center;"
+    data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5">
+    <div class="Unsubscribe--addressLine"></div>
+    <p style="font-size:12px; line-height:20px;"><a target="_blank" class="Unsubscribe--unsubscribeLink zzzzzzz"
+        href="https://growveonct.com" style="">growveon crypto trading</a></p>
+  </div>
+  </td>
                                       </tr>
                                     </table>
-                          
+                                    <!--[if mso]>
+                                  </td>
+                                </tr>
+                              </table>
+                            </center>
+                            <![endif]-->
                           </td>
                         </tr>
                       </table>
@@ -1665,10 +1727,10 @@ module.exports = {
         </div>
       </center>
     </body>
+            
             `,
                 }
 
-                console.log('sending mail.....')
 
                 transporter
                     .sendMail(mailOptions)
