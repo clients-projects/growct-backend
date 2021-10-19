@@ -955,7 +955,6 @@ module.exports = {
             `,
             }
 
-            console.log('sending mail.....')
 
             transporter
                 .sendMail(mailOptions)
