@@ -1321,7 +1321,6 @@ module.exports = {
                 err.statusCode = 422
                 throw err
             }
-            const theCreator = []
             const thePendingDeposit = []
             const thePendingWithdrawal = []
             const theAllUsersDeposit = []
@@ -1331,27 +1330,7 @@ module.exports = {
 
             
             return {
-                getFund: getFunds.map((p, i) => {
-                    theCreator.push({
-                        _id: p._id.toString(),
-                        creator: p.creator.username,
-                        status: p._doc.status,
-                        amount: Math.floor(p._doc.amount),
-                        currency: p._doc.currency,
-                        fundNO: i + 1,
-                        createdAt: p.createdAt.toLocaleString('en-GB', {
-                            hour12: true,
-                        }),
-                        updatedAt: p.updatedAt.toLocaleString('en-GB', {
-                            hour12: true,
-                        }),
-                    })
-                    console.log('the creator', theCreator)
-                    return {
-                        ...p._doc,
-                        _id: p._id.toString(),
-                    }
-                }),
+                
                 getPendingDeposit: pendingDeposit.map((p, i) => {
                     thePendingDeposit.push({
                         _id: p._id.toString(),
@@ -1433,7 +1412,6 @@ module.exports = {
                         _id: p._id.toString(),
                     }
                 }),
-                fundData: theCreator,
                 thePendingDeposit,
                 thePendingWithdrawal,
                 theAllUsersDeposit,

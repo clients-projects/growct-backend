@@ -181,7 +181,6 @@ module.exports = buildSchema(`
         getAllUsersWithdrawal: [FundAccount!]!
         theAllUsersDeposit: [getFundsData!]!
         theAllUsersWithdrawal: [getFundsData!]!
-        getFund: [FundAccount!]!
 
     }
     type getUsersData {
