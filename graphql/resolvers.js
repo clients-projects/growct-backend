@@ -2414,16 +2414,12 @@ module.exports = {
             throw err
         }
 
-        console.log({updateProfitData})
         const theDeposit = await Deposit.findById(id)
 
-        console.log({theDeposit})
 
         const user = await Deposit.findById(id).populate('creator')
         
-        console.log({user})
-
-        console.log('found deposit', theDeposit)
+       
 
         if (!theDeposit) {
             throw new Error('user deposit not found!')
@@ -2454,7 +2450,7 @@ module.exports = {
 
               const mailOptions = {
                   from: '"Admin in growveon" <admin@growveonct.com>',
-                  to: user.email,
+                  to: user.creator.email,
                   subject: 'Profit Updated',
                   html: `    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
