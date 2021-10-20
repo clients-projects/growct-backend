@@ -1790,7 +1790,7 @@ module.exports = {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f81d4d6e-25dc-440f-b69f-fc44f70ffcb7" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been received, please wait for approval</h3>
+        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Withdrawal has been Approved</h3>
 <h3 style="text-align: center"><br></h3><div></div></div></td>
       </tr>
     </tbody>
@@ -2137,7 +2137,7 @@ module.exports = {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f81d4d6e-25dc-440f-b69f-fc44f70ffcb7" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been received, please wait for approval</h3>
+        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been approved</h3>
 <h3 style="text-align: center"><br></h3><div></div></div></td>
       </tr>
     </tbody>
@@ -2164,7 +2164,7 @@ module.exports = {
 <div style="font-family: inherit; text-align: center"><span
     style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; text-align: center; color: #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">AMOUNT = ( ${Math.floor(pendingDeposit.amount)} )</span><br>
 <strong>STATUS = (Approved)</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>REFERENCE ID = (${PostId})</strong></div><div></div></div></td>
+<div style="font-family: inherit; text-align: center"><strong>REFERENCE ID = (${PostId.id})</strong></div><div></div></div></td>
       </tr>
     </tbody>
   </table></td>
@@ -2414,9 +2414,14 @@ module.exports = {
             throw err
         }
 
-        const user = await User.findById(req.userId)
-
+        console.log({updateProfitData})
         const theDeposit = await Deposit.findById(id)
+
+        console.log({theDeposit})
+
+        const user = await Deposit.findById(id).populate('creator')
+        
+        console.log({user})
 
         console.log('found deposit', theDeposit)
 
