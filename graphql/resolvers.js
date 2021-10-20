@@ -1282,12 +1282,13 @@ module.exports = {
         }
 
         try {
-            const getFunds = await FundAccount.find().populate('creator')
+           
 
             const pendingDeposit = await PendingDeposit.find().populate(
                 'creator'
             )
 
+            console.log({pendingDeposit})
             const pendingWithdrawal = await PendingWithdrawal.find().populate(
                 'creator'
             )
@@ -1296,11 +1297,7 @@ module.exports = {
                 'creator'
             )
 
-            if (!getFunds) {
-                const err = new Error('No Funds for Funding')
-                err.statusCode = 422
-                throw err
-            }
+          
             if (!pendingDeposit) {
                 const err = new Error('No pending deposit')
                 err.statusCode = 422
