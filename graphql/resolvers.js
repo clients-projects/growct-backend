@@ -2603,7 +2603,7 @@ module.exports = {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f81d4d6e-25dc-440f-b69f-fc44f70ffcb7" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your Investment has been received, please wait for approval</h3>
+        <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h3 style="text-align: center">Your investment package has been updated successfully</h3>
 <h3 style="text-align: center"><br></h3><div></div></div></td>
       </tr>
     </tbody>
@@ -2611,7 +2611,7 @@ module.exports = {
     <tbody>
       <tr>
         <td style="padding:18px 0px 18px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><br></div>
-<div style="font-family: inherit; text-align: center">These are the details of your investment package</div><div></div></div></td>
+<div style="font-family: inherit; text-align: center">These are the details of your updated investment package</div><div></div></div></td>
       </tr>
     </tbody>
   </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 0px 0px 0px;" bgcolor="#FFFFFF" data-distribution="1">
