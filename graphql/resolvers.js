@@ -1327,6 +1327,8 @@ module.exports = {
             const theAllUsersDeposit = []
             const theAllUsersWithdrawal = []
 
+            console.log('get Funds', getFunds)
+
             
             return {
                 getFund: getFunds.map((p, i) => {
