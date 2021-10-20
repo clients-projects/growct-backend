@@ -8,12 +8,10 @@ const helmet = require('helmet')
 const compression = require('compression')
 
 const auth = require('./middleware/is-Auth')
-const deleteFile = require('./utility/deleteFile')
 
 const { graphqlHTTP } = require('express-graphql')
 const graphqlSchema = require('./graphql/schema')
 const graphqlResolver = require('./graphql/resolvers')
-const {transporter}  = require('./nodemailer')
 
 const app = express()
 
@@ -66,26 +64,6 @@ app.get('/', (req, res) => {
 
 app.use(auth)
 
-app.put('/api/post-image', (req, res, next) => {
-    console.log('req file', req.file)
-    if (!req.Auth) {
-        throw new Error('Not authenticated!')
-    }
-
-    if (!req.file) {
-        res.status(200).json({ message: 'No file uploaded' })
-        return next()
-    }
-
-    if (req.file && req.body.oldImage) {
-        deleteFile.deleteFile(req.body.oldImage)
-    }
-
-    return res.status(201).json({
-        message: 'Image uploaded successfully',
-        filePath: req.file.path,
-    })
-})
 
 app.use(
     '/api/graphql',
