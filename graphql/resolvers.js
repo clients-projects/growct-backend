@@ -2609,7 +2609,7 @@ module.exports = {
                                         <td role="modules-container" style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#FFFFFF" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
     <tr>
       <td role="module-content">
-        <p>pending approval</p>
+        <p>profit updated</p>
       </td>
     </tr>
   </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="ce92d3e3-a663-4a3f-aa7d-ac8014399590">
