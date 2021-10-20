@@ -1275,6 +1275,7 @@ module.exports = {
     },
 
     getFunds: async function (arg, req) {
+        console.log('resolver get funds')
         if (!req.Auth) {
             const err = new Error('Not authenticated')
             err.statusCode = 403
