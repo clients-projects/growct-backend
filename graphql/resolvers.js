@@ -1327,6 +1327,7 @@ module.exports = {
             const theAllUsersDeposit = []
             const theAllUsersWithdrawal = []
 
+            
             return {
                 getFund: getFunds.map((p, i) => {
                     theCreator.push({
@@ -1343,6 +1344,7 @@ module.exports = {
                             hour12: true,
                         }),
                     })
+                    console.log('the creator', theCreator)
                     return {
                         ...p._doc,
                         _id: p._id.toString(),
