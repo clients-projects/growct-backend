@@ -299,6 +299,21 @@ module.exports = {
             throw err
         }
 
+        // Dont run for now
+        // Change Password
+        // const findAdmin = await User.findOne({ email })
+
+        // if (findAdmin) {
+        //     console.log("admin found", findAdmin)
+        //     const hashedPassword = await bcrypt.hash(password, 12)
+
+        //     if (hashedPassword) {
+        //         findAdmin.password = hashedPassword
+        //         await findAdmin.save()
+        //         console.log({findAdmin})
+        //     }
+        // }
+
         const userExits = await User.findOne({ email })
 
         if (!userExits) {
