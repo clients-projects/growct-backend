@@ -350,7 +350,6 @@ module.exports = {
     },
 
     getUser: async function (arg, req) {
-        console.log('get user')
         if (!req.Auth) {
             const err = new Error('Not authenticated')
             err.statusCode = 403
