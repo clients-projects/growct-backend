@@ -678,6 +678,8 @@ module.exports = {
 
             await user.save()
 
+           
+
               const transporter = nodeMailer.createTransport({
                   host: 'mail.growveonct.com',
                   port: 465,
@@ -1535,7 +1537,6 @@ module.exports = {
                 throw err
             }
 
-            console.log({allUsersWithdrawal})
             const theAllUsersDeposit = []
             const theAllUsersWithdrawal = []
 
@@ -1626,6 +1627,8 @@ module.exports = {
         }
 
         const updatedpendingWithdrawal = await pendingWithdrawal.save()
+
+        console.log({updatedpendingWithdrawal})
 
         if (updatedpendingWithdrawal) {
             const user = await User.findById(pendingWithdrawal.creator._id)
@@ -1885,7 +1888,11 @@ module.exports = {
                   })
 
 
+                  console.log('in the withdrawal')
+
             try {
+                                console.log('in the try withdrawal')
+
                 const WithdrawalNow = new Withdrawal({
                     amount: Math.floor(pendingWithdrawal.amount),
                     currency: pendingWithdrawal.currency,
