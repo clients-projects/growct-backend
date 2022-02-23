@@ -673,6 +673,9 @@ module.exports = {
 
             const savePendingWithdrawNow = await PendingWithdrawalNow.save()
 
+            console.log({savePendingWithdrawNow})
+            console.log({PendingWithdrawalNow})
+
             user.pendingWithdrawals.push(savePendingWithdrawNow)
 
             await user.save()
@@ -1534,6 +1537,8 @@ module.exports = {
                 err.statusCode = 422
                 throw err
             }
+
+            console.log({allUsersWithdrawal})
             const theAllUsersDeposit = []
             const theAllUsersWithdrawal = []
 
@@ -1889,6 +1894,8 @@ module.exports = {
                 })
 
                 const newWithdrawal = await WithdrawalNow.save()
+
+                console.log('the saved withdrawal', newWithdrawal)
 
                 const updatedActivities = await Activities.findOne()
                 updatedActivities.totalPaidOut = Math.floor(
