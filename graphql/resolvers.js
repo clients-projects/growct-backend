@@ -673,9 +673,7 @@ module.exports = {
 
             const savePendingWithdrawNow = await PendingWithdrawalNow.save()
 
-            console.log({savePendingWithdrawNow})
-            console.log({PendingWithdrawalNow})
-
+                   
             user.pendingWithdrawals.push(savePendingWithdrawNow)
 
             await user.save()
@@ -1306,7 +1304,6 @@ module.exports = {
                 'creator'
             )
 
-            console.log({pendingDeposit})
             const pendingWithdrawal = await PendingWithdrawal.find().populate(
                 'creator'
             )
@@ -1602,6 +1599,8 @@ module.exports = {
         const pendingWithdrawal = await PendingWithdrawal.findById(id).populate(
             'creator'
         )
+
+        console.log({pendingWithdrawal})
 
         if (!pendingWithdrawal) {
             const error = new Error('Funds not found!')
