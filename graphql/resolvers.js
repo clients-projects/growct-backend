@@ -1589,7 +1589,6 @@ module.exports = {
         }
       },
       createWithdrawNowApproval: async function ({ PostId }, req) {
-        console.log('create withdrawal now')
         let id = mongoose.Types.ObjectId(PostId.id)
         
         if (!req.Auth) {
@@ -1603,7 +1602,6 @@ module.exports = {
             'creator'
         )
 
-        console.log({pendingWithdrawal})
 
         if (!pendingWithdrawal) {
             const error = new Error('Funds not found!')
@@ -1630,7 +1628,6 @@ module.exports = {
 
         const updatedpendingWithdrawal = await pendingWithdrawal.save()
 
-        console.log({updatedpendingWithdrawal})
 
         if (updatedpendingWithdrawal) {
             const user = await User.findById(pendingWithdrawal.creator._id)
@@ -1839,7 +1836,7 @@ module.exports = {
 <div style="font-family: inherit; text-align: center"><span
     style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: bold; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; text-align: center; color: #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">AMOUNT = (${Math.floor(pendingWithdrawal.amount)})</span><br>
 <strong>STATUS = (Approved)</strong></div>
-<div style="font-family: inherit; text-align: center"><strong>REFERENCE ID = (${PostId})</strong></div><div></div></div></td>
+<div style="font-family: inherit; text-align: center"><strong>REFERENCE ID = (${PostId.id})</strong></div><div></div></div></td>
       </tr>
     </tbody>
   </table></td>
@@ -1920,10 +1917,11 @@ module.exports = {
                         hour12: true,
                     }),
                 }
-            } catch (err) {
-                console.log(err)
-            }
-        }
+            } 
+          }
+          catch (err) {
+              console.log(err)
+          }
     },
     createInvestNowApproval: async function ({ PostId }, req) {
         let id = mongoose.Types.ObjectId(PostId.id)
