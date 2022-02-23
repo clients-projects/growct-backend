@@ -1587,16 +1587,18 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
-    },
-    createWithdrawNowApproval: async function ({ PostId }, req) {
+      },
+      createWithdrawNowApproval: async function ({ PostId }, req) {
+        console.log('create withdrawal now')
         let id = mongoose.Types.ObjectId(PostId.id)
-
+        
         if (!req.Auth) {
-            const err = new Error('Not authenticated')
-            err.statusCode = 403
-            throw err
+          const err = new Error('Not authenticated')
+          err.statusCode = 403
+          throw err
         }
-
+        
+        try {
         const pendingWithdrawal = await PendingWithdrawal.findById(id).populate(
             'creator'
         )
@@ -1890,7 +1892,6 @@ module.exports = {
 
                   console.log('in the withdrawal')
 
-            try {
                                 console.log('in the try withdrawal')
 
                 const WithdrawalNow = new Withdrawal({
